@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+	font-family: "SF-Pro-Display";
+	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-family: SF-Pro-Display, Tahoma, serif;
 }
