@@ -8,7 +8,7 @@ const imageUrl = new URL(`../../assets/promo/${props.imageName}`, import.meta.ur
 
 
 <template>
-	<img :src="imageUrl" class="w-[367px] h-[164px] object-contain rounded-lg not-draggable" />
+	<img :src="imageUrl" class="w-[367px] h-[164px] mr-5 object-contain rounded-lg not-draggable" />
 </template>
 
 

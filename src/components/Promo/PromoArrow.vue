@@ -6,8 +6,8 @@ const props = defineProps({
 
 
 <template>
-	<div>
-
+	<div class="">
+        тык
     </div>
 </template>
 

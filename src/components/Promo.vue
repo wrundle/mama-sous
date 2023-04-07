@@ -1,7 +1,7 @@
 <script setup>
-import PromoCard from './Promo/PromoCard.vue';
 import PromoArrow from './Promo/PromoArrow.vue';
-import { onMounted } from 'vue'
+import PromoCard from './Promo/PromoCard.vue';
+import { onMounted } from 'vue';
 
 
 let pos = { left: 0, x: 0 };
@@ -44,7 +44,7 @@ onMounted(() => {
 		id="promo-container"
 		v-on:scroll="scrollHandler"
 		class="
-			flex flex-nowrap space-x-5 overflow-x-scroll overscroll-x-auto cursor-grab absolute
+			flex flex-nowrap overflow-x-scroll overscroll-x-auto cursor-grab
 			hide-scrollbar fade-to-right
 		"
 	>
