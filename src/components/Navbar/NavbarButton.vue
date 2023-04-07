@@ -14,7 +14,4 @@ defineProps({
 
 
 <style scoped>
-.sf-pro-display-semibold {
-	font-family: SF-Pro-Display-Semibold;
-}
 </style>

@@ -16,12 +16,18 @@
 	font-weight: heavy;
 	font-style: normal;
 }
+.sf-pro-display-heavy {
+	font-family: SF-Pro-Display-Heavy;
+}
 
 @font-face {
 	font-family: "SF-Pro-Display-Light";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Light.otf") format("truetype");
 	font-weight: light;
 	font-style: normal;
+}
+.sf-pro-display-light {
+	font-family: SF-Pro-Display-Light;
 }
 
 @font-face {
@@ -43,6 +49,9 @@
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf") format("truetype");
 	font-weight: semibold;
 	font-style: normal;
+}
+.sf-pro-display-semibold {
+	font-family: SF-Pro-Display-Semibold;
 }
 
 @font-face {

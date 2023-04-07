@@ -9,11 +9,11 @@ defineProps({
 
 <template>
 	<div class="">
-		<div class="ml-[2px] mb-[20px] text-[30px] leading-[30px] sf-pro-display-heavy">
+		<div class="ml-[2px] mb-[20px] text-[30px] leading-[30px] cursor-default sf-pro-display-heavy">
 			{{ message }}
 		</div>
 
-		<div class="flex flex-wrap gap-y-[30px] justify-between">
+		<div class="flex flex-wrap gap-y-[30px] pb-10 justify-between">
 			<SectionCard />
 			<SectionCard />
 			<SectionCard />
@@ -24,7 +24,4 @@ defineProps({
 
 
 <style scoped>
-.sf-pro-display-heavy {
-	font-family: SF-Pro-Display-Heavy;
-}
 </style>
