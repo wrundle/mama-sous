@@ -4,6 +4,7 @@ import Section from './components/Section.vue';
 import Header from './components/Header.vue';
 import Navbar from './components/Navbar.vue';
 import Promo from './components/Promo.vue';
+import Cart from './components/Cart.vue';
 </script>
 
 <template>
@@ -12,11 +13,12 @@ import Promo from './components/Promo.vue';
 		<Header />
 		<Promo />
 		<Navbar />
-		<div class="flex flex-row h-screen">
-			<div class="">
+		<div class="flex flex-row justify-between">
+			<div class="max-w-[817px]">
 				<Section message="В лепёшке" />
 				<Section message="Бургеры" />
 			</div>
+			<Cart />
 		</div>
 	</div>
 </template>

@@ -21,7 +21,7 @@ const testClick = () => {
 			<div class="-mb-[3px] text-[13px] text-neutral-400">Время работы</div>
 			<div class="flex flex-col">
 				<div class="mb-1">
-					<HeaderButton message="09:00-23:30" @click="testClick" />
+					<HeaderButton message="09:00−23:30" @click="testClick" />
 					<HeaderButton message="399399" @click="testClick" />
 					<HeaderButton message="Адреса и зоны доставки" @click="testClick" />
 				</div>
