@@ -1,5 +1,5 @@
 <script setup>
-import HeaderButton from './Header/HeaderButton.vue'
+import HeaderButton from './Header/HeaderButton.vue';
 
 const testClick = () => {
 	console.log(1);
@@ -8,11 +8,11 @@ const testClick = () => {
 
 
 <template>
-	<div class="flex-auto flex flex-row my-[30px] h-[110px]">
+	<div class="flex flex-row my-[30px] h-[110px]">
 
 		<div class="flex-shrink flex items-center pr-[55px]">
 			<a href="" class="focus:outline-none">
-				<img class="h-max max-w-[220px]" src="https://app.foodpicasso.com/source/photos/2022/05/24/296bce6aeef5fddb6b8afcf553e999c8.png" />
+				<img class="h-max max-w-[220px]" src="./../assets/logo.png" />
 			</a>
 		</div>
 
@@ -35,10 +35,11 @@ const testClick = () => {
 				bg-neutral-50 hover:bg-white focus-within:bg-white
 			">
 				<input type="text" class="
-					w-[155px] text-[17px] leading-4 text-neutral-700 h-full rounded-full bg-inherit focus:outline-none
+					w-[155px] h-full text-[17px] placeholder:text-[17px] text-neutral-700 rounded-full
+					bg-inherit focus:outline-none
 				" />
 				<div class="min-w-[28px] pr-[2px] flex items-center justify-center">
-					<img src="../assets/icons/iconSearch.svg" />
+					<img src="../assets/icons/search.svg" />
 				</div>
 			</div>
 		</div>
@@ -49,7 +50,7 @@ const testClick = () => {
 				underline underline-offset-2 decoration-blue-200 hover:decoration-blue-500
 			">Войти</span>
 			<div class="min-w-[28px] pr-[2px] flex items-center justify-center">
-				<img src="../assets/icons/iconAuth.svg" />
+				<img src="../assets/icons/auth.svg" />
 			</div>
 		</div>
 
