@@ -12,7 +12,12 @@ import Promo from './components/Promo.vue';
 		<Header />
 		<Promo />
 		<Navbar />
-		<Section />
+		<div class="flex flex-row h-screen">
+			<div class="">
+				<Section message="В лепёшке" />
+				<Section message="Бургеры" />
+			</div>
+		</div>
 	</div>
 </template>
 
