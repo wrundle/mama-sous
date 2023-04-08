@@ -1,5 +1,6 @@
 <script setup>
-import BackToTop from './components/BackToTop.vue';
+import BackToTopButton from './components/BackToTopButton.vue';
+import RefreshButton from './components/RefreshButton.vue';
 import Section from './components/Section.vue';
 import Header from './components/Header.vue';
 import Navbar from './components/Navbar.vue';
@@ -9,7 +10,8 @@ import Cart from './components/Cart.vue';
 
 <template>
 	<div class="px-[30px] w-[1200px]">
-		<BackToTop />
+		<RefreshButton />
+		<BackToTopButton />
 		<Header />
 		<Promo />
 		<Navbar />

@@ -8,12 +8,14 @@
 			<div class="flex-grow cursor-default text-[25px] leading-[30px] sf-pro-display-heavy">
 				Мой заказ
 			</div>
-			<div class="flex items-center justify-center cursor-pointer opacity-50 hover:opacity-100 transition-all">
-				<img src="../assets/icons/trash.svg" class="h-[20px]" />
+			<div class="
+				flex items-center justify-center cursor-pointer opacity-30 hover:opacity-100 transition-all duration-300
+			">
+				<img src="../assets/icons/trash.svg" class="h-[25px]" />
 			</div>
 		</div>
 
-		<div class="p-[3px] mx-[10px] h-[34px] mb-[10px] rounded-lg bg-[#eaeaea]">
+		<div class="p-[3px] mx-[10px] h-[40px] mb-[10px] rounded-lg bg-[#eaeaea]">
 
 		</div>
 
