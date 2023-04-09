@@ -1,11 +1,16 @@
 <script setup>
-import { parseContent } from '@/utilities.js';
+import { parseContent, parseOptions } from '@/utilities.js';
+
+const clickHandle = () => {
+	parseContent();
+	parseOptions();
+};
 </script>
 
 
 <template>
 	<div
-		@click="parseContent"
+		@click="clickHandle"
 		class="
 			w-8 h-8 absolute top-3 right-3 rounded-lg cursor-pointer transition-all duration-300
 			bg-neutral-200 hover:bg-neutral-300

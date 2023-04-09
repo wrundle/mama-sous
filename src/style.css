@@ -36,6 +36,9 @@
 	font-weight: medium;
 	font-style: normal;
 }
+.sf-pro-display-medium {
+	font-family: SF-Pro-Display-Medium;
+}
 
 @font-face {
 	font-family: "SF-Pro-Display-Regular";

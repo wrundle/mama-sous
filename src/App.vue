@@ -8,11 +8,21 @@ import Promo from './components/Promo/Promo.vue';
 import Cart from './components/Cart/Cart.vue';
 import Footer from './components/Footer.vue';
 
-import arr from "./content.json";
-const content = arr.reduce((acc, x) => {
+import optionsObject from "./options.json";
+import contentArray from "./content.json";
+
+
+const content = contentArray.reduce((acc, x) => {
 	x.section in acc ? acc[x.section].push(x) : acc[x.section] = [x];
 	return acc;
 }, {});
+// console.log(content);
+
+const options = new Object();
+for (const key in optionsObject) {
+	options[key] = JSON.parse(optionsObject[key]);
+};
+// console.log(options);
 </script>
 
 <template>
@@ -30,6 +40,7 @@ const content = arr.reduce((acc, x) => {
 						:key="key"
 						:title="key"
 						:items="value"
+						:options="options[key]"
 					/>
 				</div>
 				<Cart />

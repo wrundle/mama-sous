@@ -1,10 +1,16 @@
 <script setup>
 import SectionCard from './SectionCard.vue';
 
-defineProps({
+const props = defineProps({
 	title: String,
-	items: Array
+	items: Array,
+	options: Array
 });
+
+const pushOptions = (item) => {
+	item['options'] = props.options;
+	return item;
+};
 </script>
 
 
@@ -18,7 +24,7 @@ defineProps({
 			<SectionCard
 				v-for="item in items"
 				:key="item.name"
-				v-bind="item"
+				v-bind="pushOptions(item)"
 			/>
 		</div>
 	</div>

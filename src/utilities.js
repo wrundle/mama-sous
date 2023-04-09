@@ -7,3 +7,11 @@ export const parseContent = async () => {
 	});
 	console.log(response.data);
 };
+
+export const parseOptions = async () => {
+	const response = await axios({
+		method: 'GET',
+		baseURL: 'https://mama-sous-api.vercel.app/options',
+	});
+	console.log(response.data);
+};
