@@ -29,7 +29,7 @@ const mouseUpHandler = function () {
 const mouseMoveHandler = function (e) {
 	const el = document.getElementById('promo-container');
 	const dx = e.clientX - pos.x;
-	el.scrollLeft = pos.left - dx;
+	el.scrollLeft = pos.left - dx / 1.5;
 };
 
 

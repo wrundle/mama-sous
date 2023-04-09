@@ -12,7 +12,6 @@ const content = arr.reduce((acc, x) => {
 	x.section in acc ? acc[x.section].push(x) : acc[x.section] = [x];
 	return acc;
 }, {});
-console.log(content);
 </script>
 
 <template>
@@ -21,7 +20,7 @@ console.log(content);
 		<BackToTopButton />
 		<Header />
 		<Promo />
-		<Navbar />
+		<Navbar :sections="Object.keys(content)" />
 		<div class="flex flex-row justify-between">
 			<div class="max-w-[817px]">
 				<Section
@@ -31,7 +30,9 @@ console.log(content);
 					:items="value"
 				/>
 			</div>
-			<Cart />
+			<div class="h-screen pt-[75px] sticky top-0">
+				<Cart />
+			</div>
 		</div>
 	</div>
 </template>

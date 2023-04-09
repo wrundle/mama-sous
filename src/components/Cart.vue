@@ -3,7 +3,7 @@
 
 
 <template>
-	<div class="w-[292px] rounded-lg bg-neutral-100">
+	<div class="w-[292px] h-full rounded-lg bg-neutral-100">
 		<div class="px-[17px] pt-[15px] pb-[5px] flex flex-row">
 			<div class="flex-grow cursor-default text-[25px] leading-[30px] sf-pro-display-heavy">
 				Мой заказ
