@@ -2,22 +2,24 @@
 import SectionCard from './Section/SectionCard.vue';
 
 defineProps({
-	message: String
+	title: String,
+	items: Array
 });
 </script>
 
 
 <template>
-	<div class="">
+	<div>
 		<div class="ml-[2px] mb-[20px] text-[30px] leading-[30px] cursor-default sf-pro-display-heavy">
-			{{ message }}
+			{{ title }}
 		</div>
 
 		<div class="flex flex-wrap gap-y-[30px] pb-10 justify-between">
-			<SectionCard />
-			<SectionCard />
-			<SectionCard />
-			<SectionCard />
+			<SectionCard
+				v-for="item in items"
+				:key="item.name"
+				v-bind="item"
+			/>
 		</div>
 	</div>
 </template>

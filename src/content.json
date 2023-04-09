@@ -1,0 +1,506 @@
+[
+    {
+        "section": "В лепёшке",
+        "name": "Ролл Мамс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/06/23/7455d3947eee6951b501e3b9440cbb2c---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренное куриное филе, панированное в сухарях, хрустящий салат, ломтики сочного томата и ломтик сыра в зажаренной пшеничной лепешке, заправленной фирменным соусом.",
+        "price": " 132 ₽ ",
+        "size": " 230 г "
+    },
+    {
+        "section": "В лепёшке",
+        "name": "Двойной ролл Мамс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/18ef6d469d8b74bb4556e14087d86098---jpg_710_e7061_convert.jpg",
+        "badge": "Хит",
+        "description": "(Все в двойном размере)\nОбжаренное куриное филе, панированное в сухарях, хрустящий салат, ломтики сочного томата и ломтик сыра в зажаренной пшеничной лепешке, заправленной фирменным соусом.",
+        "price": " 207 ₽ ",
+        "size": " 335 г "
+    },
+    {
+        "section": "В лепёшке",
+        "name": "Ролл Папс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/a8e48311a99faaad1cb5de61a096455c---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Рубленный говяжий бифштекс со специями, ломтик сыра, хрустящий салат, ломтики сочного томата в зажаренной пшеничной лепешке, заправленной томатным соусом и фирменным соусом.",
+        "price": " 156 ₽ ",
+        "size": " 240 г "
+    },
+    {
+        "section": "В лепёшке",
+        "name": "Двойной ролл Папс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/a5c477aa0713b78a8965b2c15da17db4---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "(Все в двойном размере)\nРубленный говяжий бифштекс со специями, ломтик сыра, хрустящий салат, ломтики сочного томата в зажаренной пшеничной лепешке, заправленной томатным соусом и фирменным соусом.",
+        "price": " 249 ₽ ",
+        "size": " 335 г "
+    },
+    {
+        "section": "В лепёшке",
+        "name": "Веган ролл",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/aa8079d12e640cf61717a390e83dc0e6---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Оливки, ломтики сыра сиртаки, хрустящий салат, ломтики сочного томата, свежие сочные огурчики, перчик сладкий в зажаренной пшеничной лепешке, заправленный оливковым маслом.",
+        "price": " 189 ₽ ",
+        "size": " 350 г "
+    },
+    {
+        "section": "В лепёшке",
+        "name": "Ролл фри",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/b50c20d6e65e24d0940fb2e5e40d593e---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Картофель фри, хрустящий салат, ломтики сочного томата, хрустящие маринованные огурчики в зажаренной пшеничной лепешке, заправленный сырным соусом.",
+        "price": " 141 ₽ ",
+        "size": " 230 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Мамчикен",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/bee5e6af8851445b11760fd5b277c536---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренное куриное филе, панированное в сухарях, которое подается на булочке с кунжутом, заправленной хрустящим салатом, ломтиками сочного томата, ломтиком сыра и фирменным соусом.",
+        "price": " 141 ₽ ",
+        "size": " 210 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Чикенбургер",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/19a7b59e845ffa490106a0c589e20b65---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренное куриное филе, панированное в сухарях, которое подается на булочке с кунжутом, заправленной хрустящим салатом, хрустящим маринованным огурчиком и фирменным соусом.",
+        "price": " 121 ₽ ",
+        "size": " 190 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Фреш Мамс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/0f8d63665b3e21ad5e1d067e65e35b70---jpg_710_e7061_convert.jpg",
+        "badge": "Хит",
+        "description": "Обжаренное куриное филе, панированное в сухарях, которое подается на булочке с кунжутом, заправленной хрустящим салатом, свежими сочными огурчиками, ломтиками сочного томата, болгарским перчиком и фирменным соусом.",
+        "price": " 137 ₽ ",
+        "size": " 235 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Биг Пап",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/8a3b0bfe201fdd2c43a6d0650f7a52a5---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренная булка разрезанная на три части. В одном бургере вы получаете двойную порцию говяжьего бифштекса, двойную порцию сыра, двойную порцию хрустящего салата, двойную порцию маринованных огурчиков, двойную порцию томатного и фирменных соусов.",
+        "price": " 233 ₽ ",
+        "size": " 360 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Мини Мам Чикен",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/65c1803fe9c6ef2480705698bf8a5048---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "(мини-версия знаменитого Мам Чикен)\nОбжаренное куриное филе, панированное в сухарях, которое подается на булочке для бургера мини, заправленной хрустящим салатом, ломтиками сочного томата, ломтиком сыра и фирменным соусом.",
+        "price": " 111 ₽ ",
+        "size": " 153 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Чизбургер Пап",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/21/e9d8865067033fb85d93ca0621f6da73---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Булочка с кунжутом, обжаренный сочный бифштекс, два ломтика сыра, хрустящие маринованные огурчики, хрустящий салат, томатный соус, фирменный соус.",
+        "price": " 160 ₽ ",
+        "size": " 280 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Мини Чизбургер Пап",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/48432cfb649804aeb6fb33b92b7106a9---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "(Мини-версия знаменитого Чизбургер Пап)\nБулочка для бургера мини, обжаренный сочный бифштекс, два ломтика сыра, хрустящие маринованные огурчики, хрустящий салат, томатный соус, фирменный соус.",
+        "price": " 135 ₽ ",
+        "size": " 174 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Биг Трейси",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/06/27/b3144b262a43035dc72447476c2a0a72---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренный сочный бифштекс из говядины, большая булочка с кунжутом, три ломтика сыра, ломтики сочного томата, хрустящий салат, томатный и фирменный соус.",
+        "price": " 182 ₽ ",
+        "size": " 260 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Пап де люкс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/06/27/9b7ddc54852db59ab5900cc9502de1a5---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренный сочный бифштекс из говядины, большая булочка с кунжутом, ломтик сыра, ломтики сочного томата, хрустящий салат, томатный и фирменный соус.",
+        "price": " 152 ₽ ",
+        "size": " 240 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Фреш Папс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/06/27/691094a75eb048aab52e10fb5d70bee3---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренный сочный бифштекс из говядины, булочка с кунжутом, хрустящий салат, свежие сочные огурчики, ломтики сочного томата, болгарский перчик, фирменный соус.",
+        "price": " 136 ₽ ",
+        "size": " 235 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Чизбургер",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/e784c2d2741d653f23a6842b9092b102---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренный сочный бифштекс из говядины с ломтиком сыра на булочке с кунжутом, заправленной томатным и фирменным соусом, с хрустящими маринованными огурчиками.",
+        "price": " 128 ₽ ",
+        "size": " 210 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Гамбургер",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/063956032fef185b2c8d090cdbc9c345---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Обжаренный сочный бифштекс из говядины на булочке с кунжутом, заправленной томатным и фирменным соусом, с хрустящими маринованными огурчиками.",
+        "price": " 110 ₽ ",
+        "size": " 170 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "WOW бургер",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/318a949df604512b335b7b312acaa10a---jpg_710_e7061_convert.jpg",
+        "badge": "Хит",
+        "description": "Зажаренная на гриле хрустящая булочка с кунжутом, пикантным соусом барбекю по-техасски с добавлением фирменного соуса. В сочетании с хрустящими маринованными огурчиками и беконом, говяжьим бифштексом, с запеченным на гриле омлетом, сыром и  хрустящим листом салата...Просто WOW",
+        "price": " 264 ₽ ",
+        "size": " 316 г "
+    },
+    {
+        "section": "Бургеры",
+        "name": "Двойной Чизбургер Пап",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/c5c50f809a2de1d269952e2d0e2fe30e---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Два сочных зажаренных на гриле говяжьих бифштекса, хрустящий лист салата  на булочке с кунжутом, заправленной томатным и фирменным соусом с двумя ломтиками сыра, и двойная порция хрустящих маринованных огурчиков.",
+        "price": " 215 ₽ ",
+        "size": " 340 г "
+    },
+    {
+        "section": "Хот-доги",
+        "name": "Хот-дог",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/ecec4e191865b32fbed5b8d67ccadbd8---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Сочная сосиска, зажаренный в гриле багет, маринованные огурчики, ломтики сочного томата, хрустящий салат,  фирменный соус, томатный соус.",
+        "price": " 142 ₽ ",
+        "size": " 260 г "
+    },
+    {
+        "section": "Хот-доги",
+        "name": "Двойной хот-дог",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/2fa2500e22a57cfe9511c8a74e560f06---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Две сочные сосиски, зажаренный в гриле багет, маринованные огурчики, ломтики сочного томата, хрустящий салат,  фирменный соус, томатный соус.",
+        "price": " 204 ₽ ",
+        "size": " 350 г "
+    },
+    {
+        "section": "Крылья и ножки",
+        "name": "Чикен Папс",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/db4632f0dbd372563eb52de8fa58cd7e---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Куриные крылышки, панированные в сухарях, обжаренные во фритюре",
+        "price": " 223 ₽ ",
+        "size": " 5шт "
+    },
+    {
+        "section": "Крылья и ножки",
+        "name": "Куриные ножки",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/126ce24f4b194e736599a7b30d09bd58---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Куриные ножки, панированные в сухарях, обжаренные во фритюре",
+        "price": " 218 ₽ ",
+        "size": " 3шт г / 350г "
+    },
+    {
+        "section": "Крылья и ножки",
+        "name": "CRAZY BASKET ТОЛЬКО В ПАПАSOUS",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/697378a60ed43c87d93cf045df575361---jpg_710_e7061_convert.jpg",
+        "badge": "Хит",
+        "description": "Куриные ножки - 2шт, куриные крылья - 5шт, картофель фри малая, куриное филе панированное - 160г, фирменный соус",
+        "price": " 600 ₽ ",
+        "size": " 900 г "
+    },
+    {
+        "section": "Крылья и ножки",
+        "name": "Стрипсы от папы",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2023/03/30/9ed7892b28b75ec85b15c9b610ae2f47---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Сочная курочка в хрустящей панировке",
+        "price": " 130 ₽ ",
+        "size": " 150 г "
+    },
+    {
+        "section": "Салаты",
+        "name": "Салат «Греческий»",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/5f856cbf5f659cb6346d9f7533d6a3ea---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Оливки, сливочный сыр брынза, томаты, свежие огурчики, сладкий перчик, лист салата, оливковое масло, кунжут",
+        "price": " 233 ₽ ",
+        "size": " 200 г "
+    },
+    {
+        "section": "Салаты",
+        "name": "Салат «Фирменный»",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/7e5e893caa6a8fadcecc9147ffb823aa---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Картофель фри, маринованные огурчики, томаты, фирменный соус, лист салата, куриное филе, панированное в сухарях",
+        "price": " 159 ₽ ",
+        "size": " 200 г "
+    },
+    {
+        "section": "Ланч",
+        "name": "Ланч «MINI»",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/c8ddef8f7135f8454691430a6e00becb---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Гамбургер, картофель фри (малая порция), соус фирменный,  \nсок 0.2л",
+        "price": " 291 ₽ ",
+        "size": " 530 г "
+    },
+    {
+        "section": "Ланч",
+        "name": "Ланч «Стандарт»",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/7e36018270889bb462f0ebfbd7c094b9---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Чикенбургер, картофель фри средняя, соус фирменный, сок 0,33л",
+        "price": " 317 ₽ ",
+        "size": " 680 г "
+    },
+    {
+        "section": "Ланч",
+        "name": "Ланч «MAXI»",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/720265c86c56cb0d05dd65eef68abbac---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Чизбургер, картофель фри большая, соус фирменный, Сoca-cola 0,5л",
+        "price": " 365 ₽ ",
+        "size": " 900 г "
+    },
+    {
+        "section": "Ланч",
+        "name": "Ланч «TURBO»",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/0b181bb4b47efe678b30c4b964303344---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Ролл Мамс, картофельные дольки, соус фирменный, добавка бекон,кофе зерновой",
+        "price": " 407 ₽ ",
+        "size": " 800 г "
+    },
+    {
+        "section": "Ланч",
+        "name": "Мини сет",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/dc1a7a732a1fbc1a0d7798a21e10eba8---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Мини Сет из легендарных бургеров. \nМини Мамчикен + Мини Чизбургер Пап.",
+        "price": " 246 ₽ ",
+        "size": " "
+    },
+    {
+        "section": "Картофель",
+        "name": "Картофель фри",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/c7072392de719fad25f4a363820b7bf1---png_710_e7061_convert.png",
+        "badge": "",
+        "description": "Картофель, соль",
+        "price": " 110 ₽ ",
+        "size": " 150 г "
+    },
+    {
+        "section": "Картофель",
+        "name": "Картофельные дольки от Папы",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/da7fe2885913953fe4ad8cee2e96a9eb---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Картофель, соль.",
+        "price": " 168 ₽ ",
+        "size": " 200 г "
+    },
+    {
+        "section": "Картофель",
+        "name": "Картофельные дольки от Папы СО СПЕЦИЯМИ",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/06/08/45887fb0a0ee28ac1daa94ebf6b3e5c5---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Картофель, соль, пряные специи.",
+        "price": " 168 ₽ ",
+        "size": " 200 г "
+    },
+    {
+        "section": "Соусы",
+        "name": "Без соуса",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/04d2913ea263586c8509e46b847afeea---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 0 ₽ ",
+        "size": " "
+    },
+    {
+        "section": "Соусы",
+        "name": "Томатный кетчуп",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/601e403d7e68b5ad04e69dce1417531c---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 26 ₽ ",
+        "size": " 40 г "
+    },
+    {
+        "section": "Соусы",
+        "name": "Соус Чили",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/eef4285ac6e066ab335d70dc2f5b77ee---png_710_e7061_convert.png",
+        "badge": "",
+        "description": "",
+        "price": " 43 ₽ ",
+        "size": " 40 г "
+    },
+    {
+        "section": "Соусы",
+        "name": "Тайский соус",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/6a2e0699ef258c25dfa062aadc6c90dc---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 52 ₽ ",
+        "size": " 40 г "
+    },
+    {
+        "section": "Соусы",
+        "name": "Фирменный соус",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/fc667b4ca67a4128810d147f84afde36---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 20 ₽ ",
+        "size": " 40 г "
+    },
+    {
+        "section": "Соусы",
+        "name": "Сырный соус",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/715265820b430c651910f6304c86642c---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 44 ₽ ",
+        "size": " 40 г "
+    },
+    {
+        "section": "Соусы",
+        "name": "Барбекю по-техасски",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/42dfc0ce7d54d72c62f16fcc95926894---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 50 ₽ ",
+        "size": " 40 г "
+    },
+    {
+        "section": "Напитки",
+        "name": "Чай",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/05/22/dce97db8faaf1f29e9c98232ba3003b2---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 40 ₽ ",
+        "size": " "
+    },
+    {
+        "section": "Напитки",
+        "name": "Милкшейк",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/26/bdc4a687218cc5ba2746e01b4a5ea529---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 130 ₽ ",
+        "size": " 350 г "
+    },
+    {
+        "section": "Напитки",
+        "name": "Добрый \"Кола\"",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/488d2f7cd9e8bcd13e64de388b472bf4---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Напиток газированный со вкусом колы",
+        "price": " 90 ₽ ",
+        "size": " 0,5л "
+    },
+    {
+        "section": "Напитки",
+        "name": "Добрый \"Апельсин\"",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/b426351c9c6d79e77cf3582c12c07dfd---png_710_e7061_convert.png",
+        "badge": "",
+        "description": "Напиток газированный со вкусом фанты",
+        "price": " 90 ₽ ",
+        "size": " 0,5л "
+    },
+    {
+        "section": "Напитки",
+        "name": "Добрый \"Лимон-лайм\"",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/56fa81f6bc63bc694cab132419e4a81b---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "Напиток газированный со вкусом спрайта",
+        "price": " 71 ₽ ",
+        "size": " 0,3\\0,5л "
+    },
+    {
+        "section": "Напитки",
+        "name": "Rich tea",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/12/29/494f42323b90e6a5b21c067f0c25b8dc---png_710_e7061_convert.png",
+        "badge": "",
+        "description": "",
+        "price": " 91 ₽ ",
+        "size": " 0,5л "
+    },
+    {
+        "section": "Напитки",
+        "name": "Черный чай",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/8275032c0605d79eacf5b9a0a0eb2874---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 40 ₽ ",
+        "size": " 330 мл "
+    },
+    {
+        "section": "Напитки",
+        "name": "Зеленый чай",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/01073f6781a4556e0edbf30279b6fe6c---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 40 ₽ ",
+        "size": " 330 мл "
+    },
+    {
+        "section": "Напитки",
+        "name": "Фруктовый чай",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/07/27/d168cb6fd6d046e8893de1e11da4f49e---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 40 ₽ ",
+        "size": " 330 мл "
+    },
+    {
+        "section": "Напитки",
+        "name": "Сок \"Добрый\" 1 л",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/08/12/9845752ecc8d64d95c5efeed80ac64e1---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "В ассортименте",
+        "price": " 186 ₽ ",
+        "size": " 1000 мл "
+    },
+    {
+        "section": "Напитки",
+        "name": "Сок \"Добрый\" 0,33",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/08/12/9db1e68f8dd5a60122b41c298e1379d1---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "В ассортименте",
+        "price": " 82 ₽ ",
+        "size": " 330 мл "
+    },
+    {
+        "section": "Напитки",
+        "name": "Сок \"Добрый\" 0,2",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/08/12/75ac5cc0bbdd32b97ca1dac85d5e1551---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "В ассортименте",
+        "price": " 61 ₽ ",
+        "size": " 200 мл "
+    },
+    {
+        "section": "Напитки",
+        "name": "Морс в ассортименте",
+        "imgSrc": "https://cdn.foodpicasso.com/assets/2022/08/25/b12e809614d17fe75dfc5ebbe435b683---jpg_710_e7061_convert.jpg",
+        "badge": "",
+        "description": "",
+        "price": " 59 ₽ ",
+        "size": " 0,3\\0,5 "
+    }
+]
