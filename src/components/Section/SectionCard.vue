@@ -1,6 +1,8 @@
 <script setup>
+import SectionCardBadge from './SectionCardBadge.vue';
+
 const props = defineProps({
-	badge: String,
+	badges: Array,
 	description: String,
 	imgSrc: String,
 	name: String,
@@ -11,22 +13,31 @@ const props = defineProps({
 
 
 <template>
-	<div class="w-[390px] h-[424px] border rounded-lg overflow-hidden cursor-default">
+	<div class="w-[390px] flex flex-col border rounded-lg overflow-hidden cursor-default relative">
+		<div class="absolute top-[15px] left-[15px] flex flex-wrap overflow-hidden">
+			<SectionCardBadge
+				v-for="badge in badges"
+				:key="badge"
+				:message="badge"
+			/>
+		</div>
+
 		<img
 			:src="imgSrc"
-			class="w-full h-[240px] object-cover cursor-pointer"
+			class="flex-initial w-full h-[240px] object-cover cursor-pointer"
 		/>
 
-		<div class="px-[20px] py-[16px]">
-			<div class="text-[22px] sf-pro-display-semibold">
-				{{ name }}
-			</div>
-
-			<div class="
-				mt-[3px] text-[15px] leading-[18px] text-ellipsis overflow-hidden line-clamp-3 opacity-40
-				sf-pro-display-light
-			">
-				{{ description }}
+		<div class="px-[20px] py-[16px] flex-grow flex flex-col">
+			<div class="flex-grow">
+				<div class="text-[22px] leading-[26px] sf-pro-display-semibold">
+					{{ name }}
+				</div>
+				<div class="
+					mt-[3px] text-[15px] leading-[18px] text-ellipsis overflow-hidden line-clamp-3 opacity-40
+					sf-pro-display-light
+				">
+					{{ description }}
+				</div>
 			</div>
 
 			<div class="mt-[16px] flex justify-between">
