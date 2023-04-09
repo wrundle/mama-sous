@@ -1,5 +1,5 @@
 <script setup>
-import SectionCard from './Section/SectionCard.vue';
+import SectionCard from './SectionCard.vue';
 
 defineProps({
 	title: String,

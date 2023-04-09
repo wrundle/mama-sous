@@ -1,11 +1,12 @@
 <script setup>
 import BackToTopButton from './components/BackToTopButton.vue';
 import RefreshButton from './components/RefreshButton.vue';
-import Section from './components/Section.vue';
-import Header from './components/Header.vue';
-import Navbar from './components/Navbar.vue';
-import Promo from './components/Promo.vue';
-import Cart from './components/Cart.vue';
+import Section from './components/Section/Section.vue';
+import Header from './components/Header/Header.vue';
+import Navbar from './components/Navbar/Navbar.vue';
+import Promo from './components/Promo/Promo.vue';
+import Cart from './components/Cart/Cart.vue';
+import Footer from './components/Footer.vue';
 
 import arr from "./content.json";
 const content = arr.reduce((acc, x) => {
@@ -15,25 +16,26 @@ const content = arr.reduce((acc, x) => {
 </script>
 
 <template>
-	<div class="px-[30px] w-[1200px]">
-		<RefreshButton />
-		<BackToTopButton />
-		<Header />
-		<Promo />
-		<Navbar :sections="Object.keys(content)" />
-		<div class="flex flex-row justify-between">
-			<div class="max-w-[817px]">
-				<Section
-					v-for="(value, key) in content"
-					:key="key"
-					:title="key"
-					:items="value"
-				/>
-			</div>
-			<div class="h-screen pt-[75px] sticky top-0">
+	<div class="w-full flex flex-col justify-center items-center">
+		<div class="w-[1200px] px-[30px]">
+			<RefreshButton />
+			<BackToTopButton />
+			<Header />
+			<Promo />
+			<Navbar :sections="Object.keys(content)" />
+			<div class="flex flex-row justify-between">
+				<div class="max-w-[817px]">
+					<Section
+						v-for="(value, key) in content"
+						:key="key"
+						:title="key"
+						:items="value"
+					/>
+				</div>
 				<Cart />
 			</div>
 		</div>
+		<Footer />
 	</div>
 </template>
 

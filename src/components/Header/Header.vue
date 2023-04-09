@@ -1,5 +1,5 @@
 <script setup>
-import HeaderButton from './Header/HeaderButton.vue';
+import HeaderButton from './HeaderButton.vue';
 
 const testClick = () => {
 	console.log(1);
@@ -12,7 +12,7 @@ const testClick = () => {
 
 		<div class="flex-shrink flex items-center pr-[55px]">
 			<a href="" class="focus:outline-none">
-				<img class="h-max max-w-[220px]" src="./../assets/logo.png" />
+				<img class="h-max max-w-[220px]" src="@assets/logo.png" />
 			</a>
 		</div>
 
@@ -39,7 +39,7 @@ const testClick = () => {
 					bg-inherit focus:outline-none
 				" />
 				<div class="min-w-[28px] pr-[2px] flex items-center justify-center">
-					<img src="../assets/icons/search.svg" />
+					<img src="@assets/icons/search.svg" />
 				</div>
 			</div>
 		</div>
@@ -50,7 +50,7 @@ const testClick = () => {
 				underline underline-offset-2 decoration-blue-200 hover:decoration-blue-500
 			">Войти</span>
 			<div class="min-w-[28px] pr-[2px] flex items-center justify-center">
-				<img src="../assets/icons/auth.svg" />
+				<img src="@assets/icons/auth.svg" />
 			</div>
 		</div>
 

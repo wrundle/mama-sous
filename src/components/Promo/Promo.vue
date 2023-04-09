@@ -1,6 +1,6 @@
 <script setup>
-import PromoArrow from './Promo/PromoArrow.vue';
-import PromoCard from './Promo/PromoCard.vue';
+import PromoArrow from './PromoArrow.vue';
+import PromoCard from './PromoCard.vue';
 import { onMounted } from 'vue';
 
 

@@ -1,5 +1,5 @@
 <script setup>
-import NavbarButton from './Navbar/NavbarButton.vue';
+import NavbarButton from './NavbarButton.vue';
 import { ref, onMounted } from 'vue'
 
 const props = defineProps({
@@ -13,14 +13,14 @@ onMounted(() => {
 		// e.target.classList.toggle("text-red-500", e.intersectionRatio < 1);
 		isPinned.value = e.intersectionRatio < 1;
 	}, { threshold: [1] });
-	observer.observe(document.querySelector("#Navbar"));
+	observer.observe(document.querySelector("#navbar"));
 });
 </script>
 
 
 <template>
 	<div
-		id="Navbar"
+		id="navbar"
 		class="mt-[35px] mb-[30px] sticky -top-[1px] z-10 border-b transition-all bg-white bg-opacity-80 backdrop-blur"
 		:class="{
 			'h-[52px]': !isPinned,
