@@ -9,6 +9,9 @@
 	font-weight: bold;
 	font-style: normal;
 }
+.sf-pro-display-bold {
+	font-family: SF-Pro-Display-Bold;
+}
 
 @font-face {
 	font-family: "SF-Pro-Display-Heavy";
@@ -62,6 +65,9 @@
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf") format("truetype");
 	font-weight: thin;
 	font-style: normal;
+}
+.sf-pro-display-thin {
+	font-family: SF-Pro-Display-Thin;
 }
 
 @font-face {

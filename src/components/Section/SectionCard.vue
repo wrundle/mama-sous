@@ -1,4 +1,5 @@
 <script setup>
+import SectionCardOption from './SectionCardOption.vue';
 import SectionCardBadge from './SectionCardBadge.vue';
 import { ref } from 'vue'
 
@@ -20,8 +21,10 @@ const openModal = (e) => {
 };
 
 const closeModal = (e) => {
-	open.value = e.target !== e.currentTarget;
-	document.body.classList.remove('overflow-hidden');
+	if (e.target === e.currentTarget) {
+		open.value = false;
+		document.body.classList.remove('overflow-hidden');
+	}
 };
 </script>
 
@@ -36,16 +39,19 @@ const closeModal = (e) => {
 				<div
 					v-if="open"
 					@click="closeModal"
-					class="z-20 w-full h-full fixed top-0 left-0 flex justify-center bg-[#000c] transition-all"
+					class="
+						z-20 w-full h-screen overflow-auto fixed top-0 left-0 flex justify-center transition-all
+						bg-[#000c]
+					"
 				>
-					<div class="
-						z-30 w-[350px] mt-6 mb-3 relative overflow-hidden
-						rounded-lg cursor-default bg-white
-					">
-						<div class="
-							w-[27px] h-[27px] absolute top-[12px] right-[12px] flex justify-center items-center
-							rounded-full cursor-pointer bg-[#EFEFEF]
-						">
+					<div class="z-30 w-[350px] h-max mt-6 mb-3 relative rounded-lg cursor-default bg-white">
+						<div
+							@click="closeModal"
+							class="
+								w-[27px] h-[27px] absolute top-[12px] right-[12px] flex justify-center items-center
+								rounded-full cursor-pointer bg-[#EFEFEF]
+							"
+						>
 							<img
 								src="../../assets/icons/cross.svg"
 								class="max-w-[13px] opacity-75 hover:opacity-100 transition-all"
@@ -54,10 +60,10 @@ const closeModal = (e) => {
 
 						<img
 							:src="imgSrc"
-							class="w-full object-cover"
+							class="w-full object-cover rounded-lg"
 						/>
 
-						<div class="mt-5 px-[21px] flex flex-col gap-y-4 overflow-auto">
+						<div class="pt-5 px-[21px] flex flex-col gap-y-4">
 							<div class="flex flex-row justify-between leading-[19px]">
 								<div class="text-[17px] sf-pro-display-medium">
 									{{ name }}
@@ -65,7 +71,55 @@ const closeModal = (e) => {
 								</div>
 								<div class="w-[80px] text-[17px] flex justify-end">{{ price }}</div>
 							</div>
+
 							<div class="pr-[30px] text-[16px] leading-[20px] opacity-50">{{ description }}</div>
+
+							<div
+								v-for="(value, key) in options"
+								:key="key"
+							>
+								<div class="mb-[15px] text-[16px] leading-[18px] sf-pro-display-heavy">
+									{{ value.title }}
+								</div>
+								<div
+									v-for="option in value.options"
+									:key="option.name"
+								>
+									<SectionCardOption
+										:imgSrc="option.photo"
+										:name="option.name"
+										:price="option.price_formatted"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="
+						z-40 w-[350px] p-[10px] fixed bottom-0 flex flex-row justify-between select-none bg-white shadow
+					">
+						<div class="h-[44px] flex flex-row">
+							<div class="w-[44px] flex items-center justify-center relative">
+								<div class="w-[16px] h-[2px] absolute top-[21px] left-[14px] bg-black"></div>
+							</div>
+							<div class="w-[44px] flex items-center justify-center">
+								<span class="text-[18px] leading-[44px]">1</span>
+							</div>
+							<div class="w-[44px] flex items-center justify-center relative">
+								<div class="w-[16px] h-[2px] absolute top-[21px] left-[14px] bg-black"></div>
+								<div class="w-[2px] h-[16px] absolute top-[14px] left-[21px] bg-black"></div>
+							</div>
+						</div>
+
+						<div
+							@click=""
+							class="
+								h-[44px] w-[188px] text-[18px] leading-[44px] text-center rounded-lg cursor-pointer
+								transition-all duration-200 bg-[#2DC36A] hover:bg-[#1A944B] text-white
+								sf-pro-display-medium
+							"
+						>
+							Добавить к заказу
 						</div>
 					</div>
 				</div>
@@ -121,6 +175,10 @@ const closeModal = (e) => {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
+}
+
+.shadow {
+	box-shadow: 0 2px 14px rgba(0,0,0,.09);
 }
 
 .v-enter-active,
