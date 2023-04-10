@@ -1,10 +1,10 @@
 <script setup>
 import PromoCard from './PromoCard.vue';
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
+const scrollModifier = ref(2);
 
 let pos = { left: 0, x: 0 };
-
 
 const scrollHandler = () => {};
 
@@ -23,12 +23,27 @@ const mouseUpHandler = function () {
 	document.removeEventListener('mouseup', mouseUpHandler);
 	el.style.removeProperty('user-select');
 	el.style.cursor = 'grab';
+
+	el.classList.add('transition-all', 'duration-300');
+	el.style.transform = 'translate(0px, 0px)';
+	setTimeout(() => {
+		el.classList.remove('transition-all', 'duration-300');
+		scrollModifier.value = 2
+	}, 250);
 };
 
 const mouseMoveHandler = function (e) {
 	const el = document.getElementById('promo-container');
 	const dx = e.clientX - pos.x;
-	el.scrollLeft = pos.left - dx / 1.5;
+	if (pos.left - dx / scrollModifier.value > 0) {
+		el.scrollLeft = pos.left - dx / scrollModifier.value;
+		el.style.transform = `translateX(${pos.left + dx / scrollModifier.value}px)`;
+		scrollModifier.value += 0.005;
+	} else {
+		el.scrollLeft = pos.left - dx / scrollModifier.value;
+		el.style.transform = `translateX(${pos.left + dx / scrollModifier.value}px)`;
+		scrollModifier.value += 0.005;
+	};
 };
 
 
@@ -39,20 +54,18 @@ onMounted(() => {
 
 
 <template>
-	<div
-		id="promo-container"
-		v-on:scroll="scrollHandler"
-		class="
-			flex flex-nowrap overflow-x-scroll overscroll-x-auto cursor-grab
-			hide-scrollbar fade-to-right
-		"
-	>
-		<PromoCard imageName="1.webp" />
-		<PromoCard imageName="2.webp" />
-		<PromoCard imageName="1.webp" />
-		<PromoCard imageName="2.webp" />
-		<PromoCard imageName="1.webp" />
-		<PromoCard imageName="2.webp" />
+	<div class="overflow-hidden">
+		<div
+			id="promo-container"
+			v-on:scroll="scrollHandler"
+			class="
+				flex flex-nowrap overflow-x-scroll overscroll-x-auto cursor-grab
+				hide-scrollbar fade-to-right
+			"
+		>
+			<PromoCard imageName="1.webp" />
+			<PromoCard imageName="2.webp" />
+		</div>
 	</div>
 </template>
 
@@ -66,8 +79,8 @@ onMounted(() => {
 	display: none;
 }
 
-.fade-to-right {
+/* .fade-to-right {
 	-webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 	mask-image: linear-gradient(to right, black 80%, transparent 100%);
-}
+} */
 </style>

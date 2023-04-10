@@ -226,14 +226,4 @@ const addToCart = (e) => {
 .shadow {
 	box-shadow: 0 2px 14px rgba(0,0,0,.09);
 }
-
-.v-enter-active,
-.v-leave-active {
-	transition: opacity 0.2s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-	opacity: 0;
-}
 </style>

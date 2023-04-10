@@ -48,7 +48,10 @@ const toggleOption = () => {
 		</div>
 
 		<div
-			class="w-[25px] h-[25px] ml-[15px] flex items-center justify-center rounded-md transition-all duration-200"
+			class="
+				w-[25px] h-[25px] ml-[15px] flex-none flex items-center justify-center rounded-md
+				transition-all duration-200
+			"
 			:class="{
 				'bg-[#F0F0F0]': !checked,
 				'bg-[#373737]': checked

@@ -1,5 +1,6 @@
 <script setup>
 import BackToTopButton from './components/BackToTopButton.vue';
+import ModalPromo1 from './components/Modals/ModalPromo1.vue';
 import RefreshButton from './components/RefreshButton.vue';
 import Section from './components/Section/Section.vue';
 import Header from './components/Header/Header.vue';
@@ -7,6 +8,7 @@ import Navbar from './components/Navbar/Navbar.vue';
 import Promo from './components/Promo/Promo.vue';
 import Cart from './components/Cart/Cart.vue';
 import Footer from './components/Footer.vue';
+
 
 import optionsObject from "./options.json";
 import contentArray from "./content.json";
@@ -27,6 +29,9 @@ for (const key in optionsObject) {
 
 <template>
 	<div class="w-full flex flex-col justify-center items-center">
+		<div id="modalContainer">
+			<ModalPromo1 />
+		</div>
 		<div class="w-[1200px] px-[30px]">
 			<RefreshButton />
 			<BackToTopButton />

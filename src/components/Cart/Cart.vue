@@ -1,9 +1,8 @@
 <script setup>
+import { ref, computed, onMounted } from 'vue';
 import CartButtons from './CartButtons.vue';
 import CartItem from './CartItem.vue';
-import { ref, onMounted } from 'vue'
 import { useStore } from 'vuex';
-import { computed } from 'vue';
 
 const store = useStore();
 
@@ -43,7 +42,7 @@ onMounted(() => {
 	>
 		<div class="h-full flex flex-col relative rounded-lg bg-neutral-100">
 
-			<div class="px-[17px] pt-[15px] pb-[5px] flex flex-row">
+			<div class="px-[17px] pt-[15px] mb-[12px] flex flex-row">
 				<div class="flex-grow cursor-default text-[25px] leading-[30px] sf-pro-display-heavy">Мой заказ</div>
 				<div
 					v-if="Object.entries(store.state.cart).length > 0"
@@ -63,6 +62,28 @@ onMounted(() => {
 			<CartButtons />
 
 			<div class="h-[19px] mb-[10px] bg-[#ffea6b]"></div>
+
+			<div class="px-[17px] py-[10px] text-[15px] leading-[17px] flex flex-row justify-between sf-pro-display-light">
+				<div>
+					<span v-if="store.state.delivery">Доставка по адресу</span>
+					<span v-else>Адрес самовывоза</span>
+					<div class="
+						mt-[2px] underline underline-offset-2 decoration-blue-200 hover:decoration-blue-500
+						transition-all cursor-pointer text-[#0085FF]
+					">
+						Пр-т Дружбы Народов, 4
+					</div>
+					<div
+						v-if="totalPrice < 700  && store.state.delivery"
+						class="opacity-40 mt-[5px] -mb-[5px] text-[13px]"
+					>
+						Закажите ещё на {{ 700 - totalPrice }} ₽ для бесплатной доставки
+					</div>
+				</div>
+				<div class="shrink-0 text-right text-[13px] leading-[17px] cursor-default sf-pro-display-medium">
+					<span v-if="store.state.delivery">{{ totalPrice > 700 ? 0 : 150 }} ₽</span>
+				</div>
+			</div>
 
 			<div class="flex-grow py-[10px] px-[17px] overflow-auto">
 				<CartItem
@@ -85,7 +106,7 @@ onMounted(() => {
 				<div class="flex justify-between">
 					<span class="mx-[7px] mb-[10px] text-[17px] leading-[23px]">К оплате</span>
 					<span class="mx-[7px] mb-[10px] text-[16px] leading-[23px] sf-pro-display-medium">
-						{{ totalPrice }} ₽
+						{{ totalPrice < 700 && store.state.delivery ? totalPrice + 150 : totalPrice }} ₽
 					</span>
 				</div>
 				<div
