@@ -1,5 +1,6 @@
 <script setup>
-import { computed } from 'vue'
+import store from '../../store';
+import { computed } from 'vue';
 
 const props = defineProps({
 	id: String,
@@ -22,9 +23,16 @@ const totalPrice = computed(() => {
 	let output = parseInt(props.price.split('\xa0')[0]);
 	for (const key in props.options) {
 		output += parseInt(props.options[key].price.split('\xa0')[0]);
-	}
-	return output;
+	};
+	return output * props.amount;
 });
+
+const changeAmount = (value) => {
+	store.dispatch('changeAmount', {
+		id: props.id,
+		value: value
+	});
+};
 </script>
 
 
@@ -36,20 +44,38 @@ const totalPrice = computed(() => {
 			<span class="opacity-40 mt-1 text-[12px] leading-[14px]">{{ size }}</span>
 		</div>
 
-		<div class="h-[24px] flex flex-row">
-			<div class="w-[20px] flex items-center justify-center relative">
-				<div class="w-[10px] h-[2px] absolute top-[9px] left-[5px] bg-black"></div>
+		<div class="
+			h-[24px] flex flex-row rounded-md transition-all bg-black bg-opacity-0
+			hover:bg-opacity-75 hover:text-white
+		">
+			<div
+				@click="changeAmount(-1)"
+				class="group w-[20px] flex items-center justify-center relative cursor-pointer"
+			>
+				<div class="
+					w-[10px] h-[2px] absolute top-[11px] left-[5px] opacity-80 transition-all
+					bg-neutral-100 group-hover:bg-white group-hover:opacity-100
+				"></div>
 			</div>
-			<div class="w-[20px] flex items-center justify-center">
-				<span class="text-[13px] leading-[24px]">1</span>
+			<div class="w-[20px] flex items-center justify-center cursor-default">
+				<span class="text-[13px] leading-[24px] sf-pro-display-medium">{{ amount }}</span>
 			</div>
-			<div class="w-[20px] flex items-center justify-center relative">
-				<div class="w-[10px] h-[2px] absolute top-[9px] left-[5px] bg-black"></div>
-				<div class="w-[2px] h-[10px] absolute top-[5px] left-[9px] bg-black"></div>
+			<div
+				@click="changeAmount(1)"
+				class="group w-[20px] flex items-center justify-center relative cursor-pointer"
+			>
+				<div class="
+					w-[10px] h-[2px] absolute top-[11px] left-[5px] opacity-80 transition-all
+					bg-neutral-100 group-hover:bg-white group-hover:opacity-100
+				"></div>
+				<div class="
+					w-[2px] h-[10px] absolute top-[7px] left-[9px] opacity-80 transition-all
+					bg-neutral-100 group-hover:bg-white group-hover:opacity-100
+				"></div>
 			</div>
 		</div>
 
-		<div class="w-[55px] shrink-0 text-right text-[13px] leading-[17px] sf-pro-display-medium">
+		<div class="w-[55px] shrink-0 text-right text-[13px] leading-[17px] cursor-default sf-pro-display-medium">
 			{{ totalPrice }} ₽
 		</div>
 	</div>

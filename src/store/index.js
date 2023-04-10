@@ -17,6 +17,8 @@ export default reactive(createStore({
 
 		selectedOptions: new Object(),
 		selectedAmount: new Number(),
+
+		isPromoActive: new Boolean(),
 	},
 
 
@@ -56,6 +58,16 @@ export default reactive(createStore({
 			state.cart[state.currentID] = payload;
 			state.currentID++;
 			// console.log(state.cart);
+		},
+
+		CLEAR_CART(state) {
+			state.cart = new Object();
+		},
+
+		CHANGE_AMOUNT(state, payload) {
+			state.cart[payload.id].amount + payload.value == 0
+			? delete state.cart[payload.id]
+			: state.cart[payload.id].amount += payload.value;
 		}
 	},
 
@@ -79,6 +91,14 @@ export default reactive(createStore({
 
 		addToCart(context, payload) {
 			context.commit('ADD_TO_CART', payload);
+		},
+
+		clearCart(context) {
+			context.commit('CLEAR_CART');
+		},
+
+		changeAmount(context, payload) {
+			context.commit('CHANGE_AMOUNT', payload);
 		}
 	},
 

@@ -3,10 +3,25 @@ import CartButtons from './CartButtons.vue';
 import CartItem from './CartItem.vue';
 import { ref, onMounted } from 'vue'
 import { useStore } from 'vuex';
+import { computed } from 'vue';
 
 const store = useStore();
 
 const isPinned = ref(false);
+
+const clearCart = () => confirm('Очистить корзину?') ? store.dispatch('clearCart') : {};
+
+const totalPrice = computed(() => {
+	let output = 0;
+	for (const foo in store.state.cart) {
+		let price = parseInt(store.state.cart[foo].price.split('\xa0')[0]);
+		for (const bar in store.state.cart[foo].options) {
+			price += parseInt(store.state.cart[foo].options[bar].price.split('\xa0')[0]);
+		};
+		output += price * store.state.cart[foo].amount
+	};
+	return output;
+});
 
 onMounted(() => {
 	const observer = new IntersectionObserver(([e]) => {
@@ -30,10 +45,14 @@ onMounted(() => {
 
 			<div class="px-[17px] pt-[15px] pb-[5px] flex flex-row">
 				<div class="flex-grow cursor-default text-[25px] leading-[30px] sf-pro-display-heavy">Мой заказ</div>
-				<div class="
-					flex items-center justify-center cursor-pointer
-					opacity-30 hover:opacity-100 transition-all duration-300
-				">
+				<div
+					v-if="Object.entries(store.state.cart).length > 0"
+					@click="clearCart"
+					class="
+						flex items-center justify-center cursor-pointer opacity-30 hover:opacity-100 transition-all
+						duration-300
+					"
+				>
 					<img
 						src="@assets/icons/trash.svg"
 						class="h-[25px]"
@@ -45,7 +64,7 @@ onMounted(() => {
 
 			<div class="h-[19px] mb-[10px] bg-[#ffea6b]"></div>
 
-			<div class="flex-grow py-[10px] px-[17px]">
+			<div class="flex-grow py-[10px] px-[17px] overflow-auto">
 				<CartItem
 					v-for="(value, key) in store.state.cart"
 					:key="key"
@@ -58,13 +77,28 @@ onMounted(() => {
 				/>
 			</div>
 
-			<div class="w-[292px] sticky bg-neutral-100 shadow">
+			<div
+				v-if="Object.entries(store.state.cart).length > 0"
+				class="w-[292px] p-[10px] sticky bottom-0 bg-neutral-100"
+				:class="{'fixed shadow': isPinned}"
+			>
 				<div class="flex justify-between">
-					<div>К оплате</div>
-					<div>0</div>
+					<span class="mx-[7px] mb-[10px] text-[17px] leading-[23px]">К оплате</span>
+					<span class="mx-[7px] mb-[10px] text-[16px] leading-[23px] sf-pro-display-medium">
+						{{ totalPrice }} ₽
+					</span>
+				</div>
+				<div
+					@click=""
+					class="
+						z-50 text-[20px] leading-[46px] text-center rounded-lg
+						cursor-pointer transition-all duration-200 bg-[#1dbf73] hover:bg-[#1a944b]
+						text-white active:scale-95 sf-pro-display-medium
+					"
+				>
+					Оформить заказ
 				</div>
 			</div>
-
 		</div>
 	</div>
 </template>
@@ -72,6 +106,6 @@ onMounted(() => {
 
 <style scoped>
 .shadow {
-	box-shadow: 0 2px 14px rgba(0,0,0,.09);
+	box-shadow: 0 -2px 12px -10px rgba(0,0,0,.9);
 }
 </style>

@@ -17,6 +17,7 @@ const props = defineProps({
 const store = useStore();
 
 const open = ref(false);
+const amount = ref(1);
 
 const openModal = (e) => {
 	open.value = true;
@@ -31,12 +32,16 @@ const closeModal = (e) => {
 	}
 };
 
+const changeAmount = (value) => {
+	amount.value += amount.value + value > 0 ? value : 0;
+};
+
 const addToCart = (e) => {
 	store.dispatch('addToCart', {
 		name: props.name,
 		size: props.size,
 		price: props.price,
-		amount: 1
+		amount: amount
 	});
 
 	open.value = false;
@@ -118,22 +123,43 @@ const addToCart = (e) => {
 							shadow
 						">
 							<div class="h-[44px] flex flex-row">
-								<div class="w-[44px] flex items-center justify-center relative">
-									<div class="w-[16px] h-[2px] absolute top-[21px] left-[14px] bg-black"></div>
+								<div
+									@click="changeAmount(-1)"
+									class="
+										group w-[44px] flex items-center justify-center relative rounded-lg
+										transition-all
+									"
+									:class="{
+										'cursor-pointer bg-[#F4F3EF] hover:bg-[#3D3D3D] active:scale-95': amount > 1,
+										'opacity-30': amount <= 1
+									}"
+								>
+									<div
+										class="w-[16px] h-[2px] absolute top-[21px] left-[14px] bg-black"
+										:class="{'group-hover:bg-white': amount > 1,}"
+									></div>
 								</div>
 								<div class="w-[44px] flex items-center justify-center">
-									<span class="text-[18px] leading-[44px]">1</span>
+									<span class="text-[18px] leading-[44px]">{{ amount }}</span>
 								</div>
-								<div class="w-[44px] flex items-center justify-center relative">
-									<div class="w-[16px] h-[2px] absolute top-[21px] left-[14px] bg-black"></div>
-									<div class="w-[2px] h-[16px] absolute top-[14px] left-[21px] bg-black"></div>
+								<div
+									@click="changeAmount(1)"
+									class="
+										group w-[44px] flex items-center justify-center relative rounded-lg
+										transition-all active:scale-95 bg-[#F4F3EF] hover:bg-[#3D3D3D] cursor-pointer
+									"
+								>
+									<div
+										class="w-[16px] h-[2px] absolute top-[21px] left-[14px] bg-black group-hover:bg-white"
+									></div>
+									<div class="w-[2px] h-[16px] absolute top-[14px] left-[21px] bg-black group-hover:bg-white"></div>
 								</div>
 							</div>
 
 							<div
 								@click="addToCart"
 								class="
-									z-50 h-[44px] w-[188px] text-[18px] leading-[44px] text-center rounded-lg
+									z-50 w-[188px] text-[18px] leading-[44px] text-center rounded-lg
 									cursor-pointer transition-all duration-200 bg-[#2DC36A] hover:bg-[#1A944B]
 									text-white active:scale-95 sf-pro-display-medium
 								"
