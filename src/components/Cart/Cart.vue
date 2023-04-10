@@ -1,6 +1,10 @@
 <script setup>
 import CartButtons from './CartButtons.vue';
+import CartItem from './CartItem.vue';
 import { ref, onMounted } from 'vue'
+import { useStore } from 'vuex';
+
+const store = useStore();
 
 const isPinned = ref(false);
 
@@ -17,12 +21,12 @@ onMounted(() => {
 <template>
 	<div
 		id="cart-container"
-		class="h-screen pb-[15px] sticky top-0 transition-all"
+		class="w-[292px] h-screen pb-[15px] sticky top-0 transition-all"
 		:class="{
 			'pt-[75px]': !isPinned
 		}"
 	>
-		<div class="w-[292px] h-full rounded-lg bg-neutral-100">
+		<div class="h-full flex flex-col relative rounded-lg bg-neutral-100">
 
 			<div class="px-[17px] pt-[15px] pb-[5px] flex flex-row">
 				<div class="flex-grow cursor-default text-[25px] leading-[30px] sf-pro-display-heavy">Мой заказ</div>
@@ -41,10 +45,33 @@ onMounted(() => {
 
 			<div class="h-[19px] mb-[10px] bg-[#ffea6b]"></div>
 
+			<div class="flex-grow py-[10px] px-[17px]">
+				<CartItem
+					v-for="(value, key) in store.state.cart"
+					:key="key"
+					:id="key"
+					:name="value.name"
+					:size="value.size"
+					:price="value.price"
+					:amount="value.amount"
+					:options="value.options"
+				/>
+			</div>
+
+			<div class="w-[292px] sticky bg-neutral-100 shadow">
+				<div class="flex justify-between">
+					<div>К оплате</div>
+					<div>0</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </template>
 
 
 <style scoped>
+.shadow {
+	box-shadow: 0 2px 14px rgba(0,0,0,.09);
+}
 </style>

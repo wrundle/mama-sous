@@ -1,4 +1,5 @@
 <script setup>
+import { useStore } from 'vuex';
 import { ref } from 'vue'
 
 const props = defineProps({
@@ -7,13 +8,29 @@ const props = defineProps({
 	price: String
 });
 
+const store = useStore();
+
 const checked = ref(false);
+
+const toggleOption = () => {
+	checked.value = !checked.value;
+	if (checked.value) {
+		store.dispatch('addOption', {
+			name: props.name,
+			price: props.price,
+			amount: 1
+		});
+	} else {
+		store.dispatch('removeOption', props.name);
+	};
+	// console.log(store.state.selectedOptions);
+};
 </script>
 
 
 <template>
 	<div
-		@click="checked = !checked"
+		@click="toggleOption"
 		class="h-[60px] mb-[10px] flex flex-row items-center cursor-pointer"
 	>
 		<img
