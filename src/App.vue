@@ -37,11 +37,13 @@ for (const key in optionsObject) {
 
 <template>
 	<div class="w-full flex flex-col justify-center items-center">
-		<ModalCard v-if="store.state.modal.type == 'card'" />
-		<ModalPromo v-if="store.state.modal.type == 'promo'" />
-		<ModalTime v-if="store.state.modal.type == 'time'" />
-		<ModalCall v-if="store.state.modal.type == 'call'"/>
-		<ModalLoCATion v-if="store.state.modal.type == 'location'"/>
+		<Transition>
+			<ModalCard v-if="store.state.modal.type == 'card'" />
+			<ModalPromo v-else-if="store.state.modal.type == 'promo'" />
+			<ModalTime v-else-if="store.state.modal.type == 'time'"/>
+			<ModalCall v-else-if="store.state.modal.type == 'call'"/>
+			<ModalLoCATion v-else-if="store.state.modal.type == 'location'"/>
+		</Transition>
 		<div class="w-[1200px] px-[30px]">
 			<RefreshButton />
 			<BackToTopButton />
@@ -67,4 +69,13 @@ for (const key in optionsObject) {
 
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+	transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+	opacity: 0;
+}
 </style>

@@ -11,15 +11,13 @@ const closeModal = (e) => {
 
 
 <template>
-	<Transition>
-		<div
-			@click="closeModal"
-			class="z-20 w-full h-screen fixed top-0 left-0 flex justify-center overflow-auto transition-all bg-[#000c]"
-			:class="{ 'items-center': store.state.modal.type != 'card' }"
-		>
-			<slot></slot>
-		</div>
-	</Transition>
+	<div
+		@click="closeModal"
+		class="z-20 w-full h-screen fixed top-0 left-0 flex justify-center overflow-auto transition-all bg-[#000c]"
+		:class="{ 'items-center': store.state.modal.type != 'card' }"
+	>
+		<slot></slot>
+	</div>
 </template>
 
 

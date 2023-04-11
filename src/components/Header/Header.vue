@@ -35,7 +35,7 @@ const store = useStore();
 					/>
 				</span>
 				<HeaderButton
-					@click="testClick"
+					@click="store.dispatch('openModal', { type: 'location', params: {} })"
 					message="Отзывы"
 				/>
 			</div>
@@ -61,7 +61,7 @@ const store = useStore();
 
 		<div class="flex-shrink flex flex-row items-center">
 			<span
-				@click="testClick"
+				@click="store.dispatch('openModal', { type: 'location', params: {} })"
 				class="
 					text-[17px] transition-colors cursor-pointer text-sky-500 underline underline-offset-2
 					decoration-blue-200 hover:decoration-blue-500
