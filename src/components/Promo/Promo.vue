@@ -1,26 +1,34 @@
 <script setup>
-import PromoCard from './PromoCard.vue';
 import { ref, onMounted } from 'vue';
+import { useStore } from 'vuex';
+
+
+const store = useStore();
+
+const getImageUrl = (name) => {
+	return new URL(`../../assets/promo/${name}.webp`, import.meta.url).href;
+};
 
 const scrollModifier = ref(2);
+const isMoved = ref(false);
 
 let pos = { left: 0, x: 0 };
 
 const scrollHandler = () => {};
 
 const mouseDownHandler = function (e) {
-	const el = document.getElementById('promo-container');
-	pos = { left: el.scrollLeft, x: e.clientX };
 	document.addEventListener('mousemove', mouseMoveHandler);
 	document.addEventListener('mouseup', mouseUpHandler);
+	const el = document.getElementById('promo-container');
 	el.style.userSelect = 'none';
 	el.style.cursor = 'grabbing';
+	pos = { left: el.scrollLeft, x: e.clientX };
 };
 
 const mouseUpHandler = function () {
-	const el = document.getElementById('promo-container');
 	document.removeEventListener('mousemove', mouseMoveHandler);
 	document.removeEventListener('mouseup', mouseUpHandler);
+	const el = document.getElementById('promo-container');
 	el.style.removeProperty('user-select');
 	el.style.cursor = 'grab';
 
@@ -29,27 +37,20 @@ const mouseUpHandler = function () {
 	setTimeout(() => {
 		el.classList.remove('transition-all', 'duration-300');
 		scrollModifier.value = 2
+		isMoved.value = false
 	}, 250);
 };
 
 const mouseMoveHandler = function (e) {
 	const el = document.getElementById('promo-container');
 	const dx = e.clientX - pos.x;
-	if (pos.left - dx / scrollModifier.value > 0) {
-		el.scrollLeft = pos.left - dx / scrollModifier.value;
-		el.style.transform = `translateX(${pos.left + dx / scrollModifier.value}px)`;
-		scrollModifier.value += 0.005;
-	} else {
-		el.scrollLeft = pos.left - dx / scrollModifier.value;
-		el.style.transform = `translateX(${pos.left + dx / scrollModifier.value}px)`;
-		scrollModifier.value += 0.005;
-	};
+	el.scrollLeft = pos.left - dx / scrollModifier.value;
+	el.style.transform = `translateX(${pos.left + dx / scrollModifier.value}px)`;
+	scrollModifier.value += 0.005;
+	isMoved.value = true;
 };
 
-
-onMounted(() => {
-	document.getElementById('promo-container').addEventListener('mousedown', mouseDownHandler);
-})
+onMounted(() => document.getElementById('promo-container').addEventListener('mousedown', mouseDownHandler));
 </script>
 
 
@@ -58,13 +59,15 @@ onMounted(() => {
 		<div
 			id="promo-container"
 			v-on:scroll="scrollHandler"
-			class="
-				flex flex-nowrap overflow-x-scroll overscroll-x-auto cursor-grab
-				hide-scrollbar fade-to-right
-			"
+			class="flex flex-nowrap overflow-x-scroll overscroll-x-auto cursor-grab hide-scrollbar"
 		>
-			<PromoCard imageName="1.webp" />
-			<PromoCard imageName="2.webp" />
+			<img
+				v-for="index in store.state.promoCount"
+				:src="getImageUrl(index)"
+				@click="store.dispatch('openModal', { type: 'promo', params: {id: index} })"
+				class="w-[367px] h-[164px] mr-5 object-contain rounded-lg not-draggable"
+				:class="{ 'pointer-events-none': isMoved }"
+			/>
 		</div>
 	</div>
 </template>
@@ -77,6 +80,11 @@ onMounted(() => {
 }
 .hide-scrollbar::-webkit-scrollbar {
 	display: none;
+}
+
+.not-draggable {
+    -webkit-user-drag: none;
+	/* user-drag: none; */
 }
 
 /* .fade-to-right {

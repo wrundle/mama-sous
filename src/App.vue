@@ -1,6 +1,7 @@
 <script setup>
+import { useStore } from 'vuex';
+
 import BackToTopButton from './components/BackToTopButton.vue';
-import ModalPromo1 from './components/Modals/ModalPromo1.vue';
 import RefreshButton from './components/RefreshButton.vue';
 import Section from './components/Section/Section.vue';
 import Header from './components/Header/Header.vue';
@@ -9,10 +10,15 @@ import Promo from './components/Promo/Promo.vue';
 import Cart from './components/Cart/Cart.vue';
 import Footer from './components/Footer.vue';
 
+import ModalLoCATion from './components/Modals/ModalLoCATion.vue';
+import ModalPromo from './components/Modals/ModalPromo.vue';
+import ModalTime from './components/Modals/ModalTime.vue';
+import ModalCall from './components/Modals/ModalCall.vue';
 
 import optionsObject from "./options.json";
 import contentArray from "./content.json";
 
+const store = useStore();
 
 const content = contentArray.reduce((acc, x) => {
 	x.section in acc ? acc[x.section].push(x) : acc[x.section] = [x];
@@ -29,9 +35,10 @@ for (const key in optionsObject) {
 
 <template>
 	<div class="w-full flex flex-col justify-center items-center">
-		<div id="modalContainer">
-			<ModalPromo1 />
-		</div>
+		<ModalPromo v-if="store.state.modal.type == 'promo'" />
+		<ModalTime v-if="store.state.modal.type == 'time'" />
+		<ModalCall v-if="store.state.modal.type == 'call'"/>
+		<ModalLoCATion v-if="store.state.modal.type == 'location'"/>
 		<div class="w-[1200px] px-[30px]">
 			<RefreshButton />
 			<BackToTopButton />

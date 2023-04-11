@@ -18,9 +18,14 @@ export default reactive(createStore({
 		selectedOptions: new Object(),
 		selectedAmount: new Number(),
 
-		openedModal: new String(),
+		modal: {
+			type: new String(),
+			params: new Object()
+		},
 
-		isPromoActive: false,
+		promo: new Object(),
+		promoCount: 2,
+
 		delivery: true
 	},
 
@@ -75,7 +80,27 @@ export default reactive(createStore({
 
 		SET_DELIVERY(state, payload) {
 			state.delivery = payload;
-		}
+		},
+
+		OPEN_MODAL(state, payload) {
+			document.body.classList.add('overflow-hidden');
+			state.modal = {
+				type: payload.type,
+				params: payload.params
+			};
+		},
+
+		CLOSE_MODAL(state) {
+			document.body.classList.remove('overflow-hidden');
+			state.modal = {
+				type: new String(),
+				params: new Object()
+			};
+		},
+
+		SET_PROMO(state, payload) {
+			state.promo = payload;
+		},
 	},
 
 
@@ -110,6 +135,18 @@ export default reactive(createStore({
 
 		setDelivery(context, payload) {
 			context.commit('SET_DELIVERY', payload);
+		},
+
+		openModal(context, payload) {
+			context.commit('OPEN_MODAL', payload);
+		},
+
+		closeModal(context) {
+			context.commit('CLOSE_MODAL');
+		},
+
+		setPromo(context, payload) {
+			context.commit('SET_PROMO', payload);
 		}
 	},
 

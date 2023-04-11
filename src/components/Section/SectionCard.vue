@@ -29,7 +29,7 @@ const closeModal = (e) => {
 		open.value = false;
 		document.body.classList.remove('overflow-hidden');
 		store.dispatch('clearSelected');
-	}
+	};
 };
 
 const changeAmount = (value) => {
