@@ -9,11 +9,7 @@ export default reactive(createStore({
 		currentID: new Number(),
 		totalPrice: new Number(),
 
-		selectedCard: {
-			name: new String(),
-			size: new String(),
-			price: new String()
-		},
+		selectedCard: new Object(),
 
 		selectedOptions: new Object(),
 		selectedAmount: new Number(),
@@ -26,7 +22,9 @@ export default reactive(createStore({
 		promo: new Object(),
 		promoCount: 2,
 
-		delivery: true
+		delivery: true,
+
+		activeSection: '',
 	},
 
 
@@ -62,10 +60,16 @@ export default reactive(createStore({
 		},
 
 		ADD_TO_CART(state, payload) {
-			payload['options'] = state.selectedOptions;
-			state.cart[state.currentID] = payload;
+			const output = {
+				price: state.selectedCard.price,
+				options: state.selectedOptions,
+				name: state.selectedCard.name,
+				size: state.selectedCard.size,
+				amount: payload,
+			};
+			state.cart[state.currentID] = output;
 			state.currentID++;
-			// console.log(state.cart);
+			console.log(state.cart);
 		},
 
 		CLEAR_CART(state) {
@@ -101,6 +105,10 @@ export default reactive(createStore({
 		SET_PROMO(state, payload) {
 			state.promo = payload;
 		},
+
+		SET_ACTIVE_SECTION(state, payload) {
+			state.activeSection = payload;
+		}
 	},
 
 
@@ -147,6 +155,10 @@ export default reactive(createStore({
 
 		setPromo(context, payload) {
 			context.commit('SET_PROMO', payload);
+		},
+
+		setActiveSection(context, payload) {
+			context.commit('SET_ACTIVE_SECTION', payload);
 		}
 	},
 

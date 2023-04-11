@@ -2,11 +2,10 @@
 import { ref, onMounted } from 'vue';
 import { useStore } from 'vuex';
 
-
 const store = useStore();
 
 const getImageUrl = (name) => {
-	return new URL(`../../assets/promo/${name}.webp`, import.meta.url).href;
+	return new URL(`../assets/promo/${name}.webp`, import.meta.url).href;
 };
 
 const scrollModifier = ref(2);

@@ -6,12 +6,13 @@ import RefreshButton from './components/RefreshButton.vue';
 import Section from './components/Section/Section.vue';
 import Header from './components/Header/Header.vue';
 import Navbar from './components/Navbar/Navbar.vue';
-import Promo from './components/Promo/Promo.vue';
+import Promo from './components/Promo.vue';
 import Cart from './components/Cart/Cart.vue';
 import Footer from './components/Footer.vue';
 
 import ModalLoCATion from './components/Modals/ModalLoCATion.vue';
 import ModalPromo from './components/Modals/ModalPromo.vue';
+import ModalCard from './components/Modals/ModalCard.vue';
 import ModalTime from './components/Modals/ModalTime.vue';
 import ModalCall from './components/Modals/ModalCall.vue';
 
@@ -33,8 +34,10 @@ for (const key in optionsObject) {
 // console.log(options);
 </script>
 
+
 <template>
 	<div class="w-full flex flex-col justify-center items-center">
+		<ModalCard v-if="store.state.modal.type == 'card'" />
 		<ModalPromo v-if="store.state.modal.type == 'promo'" />
 		<ModalTime v-if="store.state.modal.type == 'time'" />
 		<ModalCall v-if="store.state.modal.type == 'call'"/>
@@ -61,6 +64,7 @@ for (const key in optionsObject) {
 		<Footer />
 	</div>
 </template>
+
 
 <style scoped>
 </style>

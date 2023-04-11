@@ -8,7 +8,7 @@ const props = defineProps({
 <template>
 	<span
 		class="
-			mr-[7px] mb-[7px] px-2 py-1 text-[18px] text-white uppercase rounded bg-opacity-[0.85]
+			mr-[7px] mb-[7px] px-2 py-[1px] text-[18px] text-white uppercase rounded-md bg-opacity-[0.85]
 			sf-pro-display-heavy
 		"
 		:class="{

@@ -1,4 +1,5 @@
 <script setup>
+import BtnClose from './BtnClose.vue';
 import Modal from './Modal.vue';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
@@ -9,7 +10,6 @@ const getImageUrl = (name) => {
 
 const store = useStore();
 const modalID = computed(() => store.state.modal.params.id);
-const closeModal = (e) => store.dispatch('closeModal');
 const setPromo = (e) => {
 	store.dispatch('setPromo', { name: 'first', discount: 10 });
 	store.dispatch('closeModal');
@@ -21,18 +21,7 @@ const setPromo = (e) => {
 	<Modal>
 		<div class="w-[350px] h-max relative rounded-lg cursor-default bg-white">
 
-			<div
-				@click="closeModal"
-				class="
-					w-[27px] h-[27px] absolute top-[12px] right-[12px] flex justify-center items-center
-					rounded-full cursor-pointer bg-[#EFEFEF]
-				"
-			>
-				<img
-					src="@assets/icons/cross.svg"
-					class="max-w-[13px] opacity-75 hover:opacity-100 transition-all"
-				/>
-			</div>
+			<BtnClose />
 
 			<div class="mx-8 p-5 text-[22px] leading-[20px] flex justify-center text-center sf-pro-display-heavy">
 				<span v-if="modalID == 1">Скидка на первый заказ!</span><span v-else>Кэшбэк 3%!</span>

@@ -85,7 +85,7 @@ onMounted(() => {
 				</div>
 			</div>
 
-			<div class="flex-grow py-[10px] px-[17px] overflow-auto">
+			<div class="flex-grow px-[17px] overflow-auto">
 				<CartItem
 					v-for="(value, key) in store.state.cart"
 					:key="key"
@@ -103,7 +103,7 @@ onMounted(() => {
 				class="w-[292px] p-[10px] sticky bottom-0 bg-neutral-100"
 				:class="{'fixed shadow': isPinned}"
 			>
-				<div class="flex justify-between">
+				<div class="flex justify-between cursor-default">
 					<span class="mx-[7px] mb-[10px] text-[17px] leading-[23px]">К оплате</span>
 					<span class="mx-[7px] mb-[10px] text-[16px] leading-[23px] sf-pro-display-medium">
 						{{ totalPrice < 700 && store.state.delivery ? totalPrice + 150 : totalPrice }} ₽

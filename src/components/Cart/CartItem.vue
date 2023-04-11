@@ -37,7 +37,7 @@ const changeAmount = (value) => {
 
 
 <template>
-	<div class="w-full flex flex-row text-[15px] leading-[17px] sf-pro-display-light">
+	<div class="w-full mt-3 flex flex-row text-[15px] leading-[17px] sf-pro-display-light">
 		<div class="flex-grow flex flex-col">
 			<span>{{ name }}</span>
 			<span class="opacity-40">{{ formattedOptions }}</span>
