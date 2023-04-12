@@ -1,7 +1,8 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
 import CartButtons from './CartButtons.vue';
 import CartItem from './CartItem.vue';
+
+import { ref, computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 
 const store = useStore();

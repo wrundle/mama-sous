@@ -16,7 +16,7 @@ const formattedOptions = computed(() => {
 	for (const key in props.options) {
 		output += props.options[key].amount > 1 ? `${key} (${props.options[key].amount}), ` : `${key}, `
 	}
-	return output;
+	return output.substring(0, output.length - 2);
 });
 
 const totalPrice = computed(() => {
@@ -38,9 +38,9 @@ const changeAmount = (value) => {
 
 <template>
 	<div class="w-full mt-3 flex flex-row text-[15px] leading-[17px] sf-pro-display-light">
-		<div class="flex-grow flex flex-col">
-			<span>{{ name }}</span>
-			<span class="opacity-40">{{ formattedOptions }}</span>
+		<div class="flex-grow">
+			<span>{{ name }}</span><span>{{ ' ' }}</span>
+			<span class="opacity-40">{{ formattedOptions }}</span><span>{{ ' ' }}</span>
 			<span class="opacity-40 mt-1 text-[12px] leading-[14px]">{{ size }}</span>
 		</div>
 

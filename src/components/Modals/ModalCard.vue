@@ -28,7 +28,7 @@ const addToCart = (e) => {
 			class="sm:w-[350px] sm:mt-6 w-full"
 			:class="{ 'flex items-center': store.state.selectedCard.options == undefined }"
 		>
-			<div class="sm:h-max sm:min-h-0 min-h-full z-30 -3 relative rounded-lg cursor-default bg-white">
+			<div class="sm:h-max sm:min-h-0 z-30 w-full min-h-full relative rounded-lg cursor-default bg-white">
 
 				<BtnClose />
 

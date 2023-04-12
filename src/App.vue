@@ -19,6 +19,7 @@ import ModalPromo from './components/Modals/ModalPromo.vue';
 import ModalCard from './components/Modals/ModalCard.vue';
 import ModalTime from './components/Modals/ModalTime.vue';
 import ModalCall from './components/Modals/ModalCall.vue';
+import ModalCart from './components/Modals/ModalCart.vue';
 
 import optionsObject from "./options.json";
 import contentArray from "./content.json";
@@ -48,9 +49,10 @@ const screenWidth = computed(() => window.screen.width);
 		<Transition :name="screenWidth > 640 ? 'opacity' : 'slide'">
 			<ModalCard v-if="store.state.modal.type == 'card'" />
 			<ModalPromo v-else-if="store.state.modal.type == 'promo'" />
-			<ModalTime v-else-if="store.state.modal.type == 'time'"/>
-			<ModalCall v-else-if="store.state.modal.type == 'call'"/>
-			<ModalLoCATion v-else-if="store.state.modal.type == 'location'"/>
+			<ModalTime v-else-if="store.state.modal.type == 'time'" />
+			<ModalCall v-else-if="store.state.modal.type == 'call'" />
+			<ModalLoCATion v-else-if="store.state.modal.type == 'location'" />
+			<ModalCart v-else-if="store.state.modal.type == 'cart'" />
 		</Transition>
 		<div class="xl:w-[1280px] xl:px-[70px] lg:px-[30px] w-full">
 			<RefreshButton />

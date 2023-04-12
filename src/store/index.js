@@ -61,6 +61,8 @@ export default reactive(createStore({
 
 		ADD_TO_CART(state, payload) {
 			const output = {
+				description: state.selectedCard.description,
+				image: state.selectedCard.image,
 				price: state.selectedCard.price,
 				options: state.selectedOptions,
 				name: state.selectedCard.name,
@@ -69,7 +71,7 @@ export default reactive(createStore({
 			};
 			state.cart[state.currentID] = output;
 			state.currentID++;
-			console.log(state.cart);
+			// console.log(state.cart);
 		},
 
 		CLEAR_CART(state) {
