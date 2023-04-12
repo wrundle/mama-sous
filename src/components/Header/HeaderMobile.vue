@@ -7,14 +7,34 @@ const store = useStore();
 
 
 <template>
-	<div class="md:hidden w-full h-12 sticky top-0 flex bg-white">
-		<Icon :w="50" :h="50"><img src="../../assets/icons/menu.svg" class="w-[25px]" /></Icon>
+	<div class="md:hidden z-20 w-full h-12 sticky top-0 flex bg-white">
+		<div class="flex">
+			<Icon
+				:w="50" :h="50"
+				@click="store.dispatch('openModal', { type: 'location', params: {} })"
+			>
+				<img src="../../assets/icons/menu.svg" class="w-[25px]" />
+			</Icon>
+			<Icon :w="50" :h="50"></Icon>
+		</div>
+
 		<div class="flex-grow flex justify-center items-center">
 			Мама Sous
 		</div>
+
 		<div class="flex">
-			<Icon :w="50" :h="50"><img src="../../assets/icons/info.svg" class="w-[25px]" /></Icon>
-			<Icon :w="50" :h="50"><img src="../../assets/icons/search2.svg" class="w-[25px]" /></Icon>
+			<Icon
+				:w="50" :h="50"
+				@click="store.dispatch('openModal', { type: 'location', params: {} })"
+			>
+				<img src="../../assets/icons/info.svg" class="w-[25px]" />
+			</Icon>
+			<Icon
+				:w="50" :h="50"
+				@click="store.dispatch('openModal', { type: 'location', params: {} })"
+			>
+				<img src="../../assets/icons/search2.svg" class="w-[25px]" />
+			</Icon>
 		</div>
 	</div>
 

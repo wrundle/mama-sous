@@ -6,12 +6,12 @@ import Modal from './Modal.vue';
 
 <template>
 	<Modal>
-		<div class="w-[400px] h-max pb-6 relative rounded-lg cursor-default bg-white sf-pro-display-heavy">
+		<div class="sm:w-[400px] w-full sm:h-max sm:min-h-0 min-h-full pb-6 relative rounded-lg cursor-default bg-white sf-pro-display-heavy">
 
 			<BtnClose />
 
 			<div class="flex justify-center items-center text-[24px] leading-[52px]">
-				Адреса и зоны доставки
+				Uwu
 			</div>
 
 			<div class="">

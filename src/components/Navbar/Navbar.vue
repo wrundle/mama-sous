@@ -27,7 +27,7 @@ onMounted(() => {
 		"
 		:class="{
 			'lg:h-[52px]': !isPinned,
-			'lg:h-[60px] flash': isPinned
+			'lg:h-[60px] md:pt-[0px] pt-[48px] flash': isPinned
 		}"
 	>
 		<NavbarButton

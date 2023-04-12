@@ -115,11 +115,10 @@ onMounted(() => {
 					</span>
 				</div>
 				<div
-					@click=""
+					@click="store.dispatch('openModal', { type: 'cart', params: {} })"
 					class="
-						z-50 text-[20px] leading-[46px] text-center rounded-lg
-						cursor-pointer transition-all duration-200 bg-[#1dbf73] hover:bg-[#1a944b]
-						text-white active:scale-95 sf-pro-display-medium
+						z-50 text-[20px] leading-[46px] text-center rounded-lg cursor-pointer transition-all duration-200
+						bg-[#1dbf73] hover:bg-[#1a944b] text-white active:scale-95 sf-pro-display-medium
 					"
 				>
 					Оформить заказ

@@ -1,6 +1,6 @@
 <script setup>
 import { useStore } from 'vuex';
-import { ref } from 'vue';
+import { computed } from 'vue';
 
 import BackToTopButton from './components/BackToTopButton.vue';
 import RefreshButton from './components/RefreshButton.vue';
@@ -12,6 +12,7 @@ import Cart from './components/Cart/Cart.vue';
 import Footer from './components/Footer.vue';
 
 import HeaderMobile from './components/Header/HeaderMobile.vue';
+import CartMobile from './components/Cart/CartMobile.vue';
 
 import ModalLoCATion from './components/Modals/ModalLoCATion.vue';
 import ModalPromo from './components/Modals/ModalPromo.vue';
@@ -36,14 +37,15 @@ for (const key in optionsObject) {
 };
 // console.log(options);
 
-const screenWidth = ref(window.screen.width)
+const screenWidth = computed(() => window.screen.width);
 </script>
 
 
 <template>
 	<div class="w-full flex flex-col justify-center items-center relative">
 		<HeaderMobile />
-		<Transition :name="screenWidth > 768 ? 'opacity' : 'slide'">
+		<Transition name="slow-slide"><CartMobile v-if="Object.entries(store.state.cart).length > 0" /></Transition>
+		<Transition :name="screenWidth > 640 ? 'opacity' : 'slide'">
 			<ModalCard v-if="store.state.modal.type == 'card'" />
 			<ModalPromo v-else-if="store.state.modal.type == 'promo'" />
 			<ModalTime v-else-if="store.state.modal.type == 'time'"/>
@@ -80,7 +82,6 @@ const screenWidth = ref(window.screen.width)
 .opacity-leave-active {
 	transition: opacity 0.2s ease;
 }
-
 .opacity-enter-from,
 .opacity-leave-to {
 	opacity: 0;
@@ -90,9 +91,17 @@ const screenWidth = ref(window.screen.width)
 .slide-leave-active {
 	transition: all 0.2s ease-out;
 }
-
 .slide-enter-from,
 .slide-leave-to {
+	transform: translateY(100%);
+}
+
+.slow-slide-enter-active,
+.slow-slide-leave-active {
+	transition: all 0.5s ease-out;
+}
+.slow-slide-enter-from,
+.slow-slide-leave-to {
 	transform: translateY(100%);
 }
 </style>

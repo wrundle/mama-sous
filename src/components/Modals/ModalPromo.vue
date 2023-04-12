@@ -19,7 +19,7 @@ const setPromo = (e) => {
 
 <template>
 	<Modal>
-		<div class="w-[350px] h-max relative rounded-lg cursor-default bg-white">
+		<div class="sm:w-[350px] sm:h-max w-full h-full relative rounded-lg cursor-default bg-white">
 
 			<BtnClose />
 
