@@ -1,5 +1,7 @@
 <script setup>
 import HeaderButton from './HeaderButton.vue';
+import Icon from '../Icon.vue';
+
 import { useStore } from 'vuex';
 const store = useStore();
 </script>
@@ -51,9 +53,7 @@ const store = useStore();
 						focus:outline-none
 					"
 				/>
-				<div class="min-w-[28px] pr-[2px] flex items-center justify-center">
-					<img src="@assets/icons/search.svg" />
-				</div>
+				<Icon :w="28" :h="28"><img src="@assets/icons/search1.svg" /></Icon>
 			</div>
 		</div>
 
@@ -64,10 +64,10 @@ const store = useStore();
 					text-[17px] transition-colors cursor-pointer text-sky-500 underline underline-offset-2
 					decoration-blue-200 hover:decoration-blue-500
 				"
-			>Войти</span>
-			<div class="min-w-[28px] pr-[2px] flex items-center justify-center">
-				<img src="@assets/icons/auth.svg" />
-			</div>
+			>
+				Войти
+			</span>
+			<Icon :w="28" :h="28"><img class="min-w-[11px] ml-2" src="@assets/icons/auth.svg" /></Icon>
 		</div>
 
 	</div>

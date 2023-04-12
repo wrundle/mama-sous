@@ -1,5 +1,6 @@
 <script setup>
 import { useStore } from 'vuex';
+import { ref } from 'vue';
 
 import BackToTopButton from './components/BackToTopButton.vue';
 import RefreshButton from './components/RefreshButton.vue';
@@ -34,13 +35,15 @@ for (const key in optionsObject) {
 	options[key] = JSON.parse(optionsObject[key]);
 };
 // console.log(options);
+
+const screenWidth = ref(window.screen.width)
 </script>
 
 
 <template>
 	<div class="w-full flex flex-col justify-center items-center relative">
 		<HeaderMobile />
-		<Transition>
+		<Transition :name="screenWidth > 768 ? 'opacity' : 'slide'">
 			<ModalCard v-if="store.state.modal.type == 'card'" />
 			<ModalPromo v-else-if="store.state.modal.type == 'promo'" />
 			<ModalTime v-else-if="store.state.modal.type == 'time'"/>
@@ -53,14 +56,15 @@ for (const key in optionsObject) {
 			<Header />
 			<Promo />
 			<Navbar :sections="Object.keys(content)" />
-			<div class="flex px-1">
-				<div class="flex-grow">
+			<div class="lg:bg-white md:px-1 px-2 flex bg-[#F1F1F1]">
+				<div class="lg:pt-0 pt-2 flex-grow">
 					<Section
-						v-for="(value, key) in content"
+						v-for="(value, key, index) in content"
 						:key="key"
 						:title="key"
 						:items="value"
 						:options="options[key]"
+						:index="index"
 					/>
 				</div>
 				<Cart />
@@ -72,13 +76,23 @@ for (const key in optionsObject) {
 
 
 <style scoped>
-.v-enter-active,
-.v-leave-active {
+.opacity-enter-active,
+.opacity-leave-active {
 	transition: opacity 0.2s ease;
 }
 
-.v-enter-from,
-.v-leave-to {
+.opacity-enter-from,
+.opacity-leave-to {
 	opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+	transition: all 0.2s ease-out;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+	transform: translateY(100%);
 }
 </style>

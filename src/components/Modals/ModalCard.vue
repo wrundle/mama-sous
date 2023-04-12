@@ -1,6 +1,6 @@
 <script setup>
 import ModalCardOption from './ModalCardOption.vue';
-import BtnClose from './BtnClose.vue';
+import BtnClose from '../BtnClose.vue';
 import Modal from './Modal.vue';
 
 import { ref, computed } from 'vue';

@@ -31,10 +31,10 @@ const selectCard = () => {
 <template>
 	<div
 		@click="selectCard"
-		class="flex flex-col border rounded-lg overflow-hidden cursor-default relative"
+		class="flex flex-col border rounded-lg overflow-hidden cursor-default relative bg-white"
 	>
 
-		<div class="absolute top-[15px] left-[15px] flex flex-wrap overflow-hidden">
+		<div class="md:top-[14px] md:left-[14px] absolute top-[7px] left-[7px] flex flex-wrap overflow-hidden">
 			<SectionCardBadge
 				v-for="badge in badges"
 				:key="badge"
@@ -44,26 +44,26 @@ const selectCard = () => {
 
 		<img
 			:src="imgSrc"
-			class="aspect-[8/5] w-full flex-initial object-cover cursor-pointer"
+			class="sm:aspect-[8/5] aspect-square w-full flex-initial object-cover cursor-pointer"
 		/>
 
-		<div class="px-[20px] py-[16px] flex-grow flex flex-col">
+		<div class="sm:px-[20px] sm:py-[16px] p-[10px] flex-grow flex flex-col">
 			<div class="flex-grow">
-				<div class="text-[22px] leading-[26px] sf-pro-display-semibold">
+				<div class="sm:text-[22px] sm:leading-[26px] sm:sf-pro-display-semibold text-[16px] leading-[18px]">
 					{{ name }}
 				</div>
 				<div class="
-					mt-[3px] text-[15px] leading-[18px] text-ellipsis overflow-hidden opacity-40
-					line-clamp-3 sf-pro-display-light
+					sm:line-clamp-3 mt-[3px] hidden text-[15px] leading-[18px] text-ellipsis overflow-hidden opacity-40
+					sf-pro-display-light
 				">
 					{{ description }}
 				</div>
 			</div>
 
 			<div class="mt-[16px] flex justify-between">
-				<div>
-					<div class="text-[22px] leading-[22px] sf-pro-display-heavy mb-1">{{ price }}</div>
-					<div class="text-[15px] leading-[18px] sf-pro-display-light opacity-40">{{ size }}</div>
+				<div class="text-[16px] leading-[18px]">
+					<div class="sm:text-[22px] sm:leading-[22px] sf-pro-display-heavy mb-1">{{ price }}</div>
+					<div class="sm:text-[15px] sm:leading-[18px] sf-pro-display-light opacity-40">{{ size }}</div>
 				</div>
 				<div class="
 					w-[40px] h-[40px] relative rounded-lg cursor-pointer transition-all
@@ -80,12 +80,6 @@ const selectCard = () => {
 
 
 <style scoped>
-.line-clamp-3 {
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
-}
-
 .shadow {
 	box-shadow: 0 2px 14px rgba(0,0,0,.09);
 }

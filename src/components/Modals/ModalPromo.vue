@@ -1,5 +1,5 @@
 <script setup>
-import BtnClose from './BtnClose.vue';
+import BtnClose from '../BtnClose.vue';
 import Modal from './Modal.vue';
 import { useStore } from 'vuex';
 import { computed } from 'vue';

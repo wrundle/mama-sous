@@ -19,12 +19,12 @@ export default reactive(createStore({
 			params: new Object()
 		},
 
+		activeSection: new Object(),
+
 		promo: new Object(),
 		promoCount: 2,
 
-		delivery: true,
-
-		activeSection: '',
+		delivery: true
 	},
 
 
@@ -107,7 +107,7 @@ export default reactive(createStore({
 		},
 
 		SET_ACTIVE_SECTION(state, payload) {
-			state.activeSection = payload;
+			state.activeSection[payload.section] = payload.distance;
 		}
 	},
 

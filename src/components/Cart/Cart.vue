@@ -36,9 +36,16 @@ onMounted(() => {
 	<div
 		id="cart-container"
 		class="lg:pl-8 md:flex h-screen pl-2 pb-[15px] sticky top-0 hidden transition-all"
-		:class="{ 'lg:pt-[75px]': !isPinned }"
+		:class="{
+			'lg:pt-[75px]': !isPinned
+		}"
 	>
-		<div class="xl:m-0 lg:mt-0 w-[290px] mt-[50px] h-full flex flex-col relative rounded-lg bg-neutral-100">
+		<div
+			class="
+				lg:shadow-none xl:m-0 lg:mt-0 w-[290px] h-full flex flex-col relative rounded-lg bg-[#F1F1F1] shadow-xl
+			"
+			:class="{ 'mt-[50px]': !isPinned }"
+		>
 
 			<div class="px-[17px] pt-[15px] mb-[12px] flex flex-row">
 				<div class="flex-grow cursor-default text-[25px] leading-[30px] sf-pro-display-heavy">Мой заказ</div>
@@ -98,7 +105,7 @@ onMounted(() => {
 
 			<div
 				v-if="Object.entries(store.state.cart).length > 0"
-				class="w-[292px] p-[10px] sticky bottom-0 bg-neutral-100"
+				class="w-full p-[10px] sticky bottom-0 bg-neutral-100"
 				:class="{'fixed shadow': isPinned}"
 			>
 				<div class="flex justify-between cursor-default">

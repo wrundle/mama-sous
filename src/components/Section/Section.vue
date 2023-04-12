@@ -1,14 +1,15 @@
 <script setup>
 import SectionCard from './SectionCard.vue';
-import { ref, onMounted } from 'vue'
 import { useStore } from 'vuex';
+import { ref } from 'vue'
 
 const store = useStore();
 
 const props = defineProps({
+	options: Array,
+	index: Number,
 	title: String,
-	items: Array,
-	options: Array
+	items: Array
 });
 
 const pushOptions = (item) => {
@@ -16,36 +17,39 @@ const pushOptions = (item) => {
 	return item;
 };
 
-const prevTop = ref(0);
-
 const handleScroll = () => {
 	const el = document.getElementById(`${props.title}-section`);
-	if (el.getBoundingClientRect().top * prevTop.value <= 0) {
-		store.dispatch('setActiveSection', props.title);
-	}
-	prevTop.value = el.getBoundingClientRect().top;
+	store.dispatch('setActiveSection', {
+		section: props.title,
+		distance: (Math.abs(el.getBoundingClientRect().top))
+	});
 };
 
 window.addEventListener('scroll', handleScroll);
-
-onMounted(() => prevTop.value = document.getElementById(`${props.title}-section`).getBoundingClientRect().top);
 </script>
 
 
 <template>
-	<div
-		:id="`${props.title}-section`"
-		class="ml-[2px] mb-[20px] text-[30px] leading-[30px] cursor-default sf-pro-display-heavy"
-	>
-		{{ title }}
-	</div>
+	<div :id="`${props.title}-section`">
+		<div
+			class="
+				lg:block lg:text-[30px] lg:leading-[30px] lg:sf-pro-display-heavy block ml-[2px] mb-[20px]
+				text-[19px] leading-[19px] cursor-default sf-pro-display-semibold
+			"
+			:class="{
+				'hidden': index == 0
+			}"
+		>
+			{{ title }}
+		</div>
 
-	<div class="grid grid-cols-2 xl:gap-8 lg:gap-4 gap-2 pb-10">
-		<SectionCard
-			v-for="item in items"
-			:key="item.name"
-			v-bind="pushOptions(item)"
-		/>
+		<div class="pb-10 grid grid-cols-2 xl:gap-8 lg:gap-4 gap-2">
+			<SectionCard
+				v-for="item in items"
+				:key="item.name"
+				v-bind="pushOptions(item)"
+			/>
+		</div>
 	</div>
 </template>
 

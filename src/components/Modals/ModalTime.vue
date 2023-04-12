@@ -1,5 +1,5 @@
 <script setup>
-import BtnClose from './BtnClose.vue';
+import BtnClose from '../BtnClose.vue';
 import Modal from './Modal.vue';
 const d = new Date();
 const day = d.getDay();

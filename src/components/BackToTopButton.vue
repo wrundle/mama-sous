@@ -12,7 +12,7 @@ const scrollToTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
 		id="back-to-top-btn"
 		@click="scrollToTop"
 		class="
-			xl:visible invisible -z-10 w-[50px] h-screen fixed top-0 left-0 hidden cursor-pointer
+			xl:visible invisible w-[50px] h-screen fixed top-0 left-0 hidden cursor-pointer
 			transition-all duration-400 bg-[#9090901A] hover:bg-[#90909033]
 		"
 	>
