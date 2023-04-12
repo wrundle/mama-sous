@@ -35,12 +35,10 @@ onMounted(() => {
 <template>
 	<div
 		id="cart-container"
-		class="w-[292px] h-screen pb-[15px] sticky top-0 transition-all"
-		:class="{
-			'pt-[75px]': !isPinned
-		}"
+		class="lg:pl-8 md:flex h-screen pl-2 pb-[15px] sticky top-0 hidden transition-all"
+		:class="{ 'lg:pt-[75px]': !isPinned }"
 	>
-		<div class="h-full flex flex-col relative rounded-lg bg-neutral-100">
+		<div class="xl:m-0 lg:mt-0 w-[290px] mt-[50px] h-full flex flex-col relative rounded-lg bg-neutral-100">
 
 			<div class="px-[17px] pt-[15px] mb-[12px] flex flex-row">
 				<div class="flex-grow cursor-default text-[25px] leading-[30px] sf-pro-display-heavy">Мой заказ</div>

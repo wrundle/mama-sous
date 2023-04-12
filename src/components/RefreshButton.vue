@@ -12,7 +12,7 @@ const clickHandle = () => {
 	<div
 		@click="clickHandle"
 		class="
-			w-8 h-8 absolute top-3 right-3 rounded-lg cursor-pointer transition-all duration-300
+			lg:block hidden w-8 h-8 absolute top-3 right-3 rounded-lg cursor-pointer transition-all duration-300
 			bg-neutral-200 hover:bg-neutral-300
 		"
 	>

@@ -58,13 +58,13 @@ onMounted(() => document.getElementById('promo-container').addEventListener('mou
 		<div
 			id="promo-container"
 			v-on:scroll="scrollHandler"
-			class="flex flex-nowrap overflow-x-scroll overscroll-x-auto cursor-grab hide-scrollbar"
+			class="lg:p-[0px] p-[10px] flex flex-nowrap overflow-x-scroll overscroll-x-auto cursor-grab hide-scrollbar"
 		>
 			<img
 				v-for="index in store.state.promoCount"
 				:src="getImageUrl(index)"
 				@click="store.dispatch('openModal', { type: 'promo', params: {id: index} })"
-				class="w-[367px] h-[164px] mr-5 object-contain rounded-lg not-draggable"
+				class="xl:h-40 lg:h-36 md:h-32 aspect-[9/4] h-28 mr-5 object-contain rounded-lg not-draggable"
 				:class="{ 'pointer-events-none': isMoved }"
 			/>
 		</div>
@@ -73,19 +73,6 @@ onMounted(() => document.getElementById('promo-container').addEventListener('mou
 
 
 <style scoped>
-.hide-scrollbar {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
-.hide-scrollbar::-webkit-scrollbar {
-	display: none;
-}
-
-.not-draggable {
-    -webkit-user-drag: none;
-	/* user-drag: none; */
-}
-
 /* .fade-to-right {
 	-webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 	mask-image: linear-gradient(to right, black 80%, transparent 100%);

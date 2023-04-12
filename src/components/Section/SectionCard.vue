@@ -31,7 +31,7 @@ const selectCard = () => {
 <template>
 	<div
 		@click="selectCard"
-		class="w-[390px] flex flex-col border rounded-lg overflow-hidden cursor-default relative"
+		class="flex flex-col border rounded-lg overflow-hidden cursor-default relative"
 	>
 
 		<div class="absolute top-[15px] left-[15px] flex flex-wrap overflow-hidden">
@@ -44,7 +44,7 @@ const selectCard = () => {
 
 		<img
 			:src="imgSrc"
-			class="flex-initial w-full h-[240px] object-cover cursor-pointer"
+			class="aspect-[8/5] w-full flex-initial object-cover cursor-pointer"
 		/>
 
 		<div class="px-[20px] py-[16px] flex-grow flex flex-col">

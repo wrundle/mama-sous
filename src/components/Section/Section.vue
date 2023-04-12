@@ -40,7 +40,7 @@ onMounted(() => prevTop.value = document.getElementById(`${props.title}-section`
 		{{ title }}
 	</div>
 
-	<div class="flex flex-wrap gap-y-[30px] pb-10 justify-between">
+	<div class="grid grid-cols-2 xl:gap-8 lg:gap-4 gap-2 pb-10">
 		<SectionCard
 			v-for="item in items"
 			:key="item.name"

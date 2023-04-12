@@ -16,8 +16,9 @@ const scroll = () => document.getElementById(`${props.message}-section`).scrollI
 	<div
 		@click="scroll"
 		class="
-			mr-[25px] inline-flex items-center text-[22px] hover:text-[#FF0000] leading-[26px]
-			transition-all duration-400 cursor-pointer underline-offset-2 decoration-[3px] sf-pro-display-semibold
+			xl:mr-[25px] xl:p-0 xl:text-[22px] lg:text-[20px] xl:leading-[26px] lg:sf-pro-display-semibold px-2
+			text-[16px] leading-[32px] inline-flex items-center cursor-pointer transition-all duration-400
+			hover:text-[#FF0000] underline-offset-2 decoration-[3px]
 		"
 		:class="{
 			'h-full': isPinned,

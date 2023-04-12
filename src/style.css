@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.sf-pro-display-bold {
+		font-family: SF-Pro-Display-Bold;
+	}
+	.sf-pro-display-heavy {
+		font-family: SF-Pro-Display-Heavy;
+	}
+	.sf-pro-display-light {
+		font-family: SF-Pro-Display-Light;
+	}
+	.sf-pro-display-medium {
+		font-family: SF-Pro-Display-Medium;
+	}
+	.sf-pro-display-semibold {
+		font-family: SF-Pro-Display-Semibold;
+	}
+	.sf-pro-display-thin {
+		font-family: SF-Pro-Display-Thin;
+	}
+}
 
 @font-face {
 	font-family: "SF-Pro-Display-Bold";
@@ -9,67 +29,42 @@
 	font-weight: bold;
 	font-style: normal;
 }
-.sf-pro-display-bold {
-	font-family: SF-Pro-Display-Bold;
-}
-
 @font-face {
 	font-family: "SF-Pro-Display-Heavy";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Heavy.otf") format("truetype");
 	font-weight: heavy;
 	font-style: normal;
 }
-.sf-pro-display-heavy {
-	font-family: SF-Pro-Display-Heavy;
-}
-
 @font-face {
 	font-family: "SF-Pro-Display-Light";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Light.otf") format("truetype");
 	font-weight: light;
 	font-style: normal;
 }
-.sf-pro-display-light {
-	font-family: SF-Pro-Display-Light;
-}
-
 @font-face {
 	font-family: "SF-Pro-Display-Medium";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Medium.otf") format("truetype");
 	font-weight: medium;
 	font-style: normal;
 }
-.sf-pro-display-medium {
-	font-family: SF-Pro-Display-Medium;
-}
-
 @font-face {
 	font-family: "SF-Pro-Display-Regular";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
-
 @font-face {
 	font-family: "SF-Pro-Display-Semibold";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf") format("truetype");
 	font-weight: semibold;
 	font-style: normal;
 }
-.sf-pro-display-semibold {
-	font-family: SF-Pro-Display-Semibold;
-}
-
 @font-face {
 	font-family: "SF-Pro-Display-Thin";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf") format("truetype");
 	font-weight: thin;
 	font-style: normal;
 }
-.sf-pro-display-thin {
-	font-family: SF-Pro-Display-Thin;
-}
-
 @font-face {
 	font-family: "SF-Pro-Display-Ultralight";
 	src: url("./assets/fonts/SF-Pro-Display/SF-Pro-Display-Ultralight.otf") format("truetype");
@@ -77,10 +72,22 @@
 	font-style: normal;
 }
 
-
 body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: SF-Pro-Display-Regular, Tahoma, sans-serif;
+}
+
+.hide-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.not-draggable {
+    -webkit-user-drag: none;
+	/* user-drag: none; */
 }

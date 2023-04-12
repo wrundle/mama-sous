@@ -21,10 +21,13 @@ onMounted(() => {
 <template>
 	<div
 		id="navbar"
-		class="mt-[35px] mb-[30px] sticky -top-[1px] z-10 border-b transition-all bg-white bg-opacity-80 backdrop-blur"
+		class="
+			lg:p-0 lg:bg-opacity-80 lg:backdrop-blur z-10 w-full mt-[35px] mb-[30px] px-[10px] py-[7px] sticky -top-[1px]
+			whitespace-nowrap overflow-auto border-b transition-all bg-white hide-scrollbar
+		"
 		:class="{
-			'h-[52px]': !isPinned,
-			'h-[60px] flash': isPinned
+			'lg:h-[52px]': !isPinned,
+			'lg:h-[60px] flash': isPinned
 		}"
 	>
 		<NavbarButton

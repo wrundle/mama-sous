@@ -6,9 +6,9 @@ const store = useStore();
 
 
 <template>
-	<div class="flex flex-row my-[30px] h-[110px]">
+	<div class="lg:px-[30px] xl:p-0 md:flex pr-[20px] hidden max-w-full flex-row my-[30px] h-[110px]">
 
-		<div class="flex-shrink flex items-center pr-[55px]">
+		<div class="xl:pr-14 lg:pr-8 flex-shrink flex items-center">
 			<a href="" class="focus:outline-none">
 				<img
 					src="@assets/logo.png"
@@ -17,31 +17,29 @@ const store = useStore();
 			</a>
 		</div>
 
-		<div class="flex-shrink pb-[25px] pt-[11px]">
-			<div class="-mb-[3px] text-[13px] text-neutral-400">Время работы</div>
-			<div class="flex flex-col">
-				<span class="mb-1">
-					<HeaderButton
-						@click="store.dispatch('openModal', { type: 'time', params: {} })"
-						message="09:00−23:30"
-					/>
-					<HeaderButton
-						@click="store.dispatch('openModal', { type: 'call', params: {} })"
-						message="399399"
-					/>
-					<HeaderButton
-						@click="store.dispatch('openModal', { type: 'location', params: {} })"
-						message="Адреса и зоны доставки"
-					/>
-				</span>
+		<div class="flex-shrink flex flex-wrap items-center">
+			<div class="flex flex-wrap gap-x-8">
+				<HeaderButton
+					@click="store.dispatch('openModal', { type: 'time', params: {} })"
+					text="09:00−23:30"
+					label="Время работы"
+				/>
+				<HeaderButton
+					@click="store.dispatch('openModal', { type: 'call', params: {} })"
+					text="399399"
+				/>
 				<HeaderButton
 					@click="store.dispatch('openModal', { type: 'location', params: {} })"
-					message="Отзывы"
+					text="Адреса и зоны доставки"
+				/>
+				<HeaderButton
+					@click="store.dispatch('openModal', { type: 'location', params: {} })"
+					text="Отзывы"
 				/>
 			</div>
 		</div>
 
-		<div class="ml-[70px] mr-[100px] flex-grow flex items-center justify-center">
+		<div class="lg:ml-[70px] lg:mr-[100px] mx-[50px] flex-grow flex items-center justify-center">
 			<div class="
 				pl-[15px] h-[29px] w-[200px] flex flex-row border rounded-full transition-colors
 				bg-neutral-50 hover:bg-white focus-within:bg-white

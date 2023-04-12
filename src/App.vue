@@ -10,6 +10,8 @@ import Promo from './components/Promo.vue';
 import Cart from './components/Cart/Cart.vue';
 import Footer from './components/Footer.vue';
 
+import HeaderMobile from './components/Header/HeaderMobile.vue';
+
 import ModalLoCATion from './components/Modals/ModalLoCATion.vue';
 import ModalPromo from './components/Modals/ModalPromo.vue';
 import ModalCard from './components/Modals/ModalCard.vue';
@@ -36,7 +38,8 @@ for (const key in optionsObject) {
 
 
 <template>
-	<div class="w-full flex flex-col justify-center items-center">
+	<div class="w-full flex flex-col justify-center items-center relative">
+		<HeaderMobile />
 		<Transition>
 			<ModalCard v-if="store.state.modal.type == 'card'" />
 			<ModalPromo v-else-if="store.state.modal.type == 'promo'" />
@@ -44,14 +47,14 @@ for (const key in optionsObject) {
 			<ModalCall v-else-if="store.state.modal.type == 'call'"/>
 			<ModalLoCATion v-else-if="store.state.modal.type == 'location'"/>
 		</Transition>
-		<div class="w-[1200px] px-[30px]">
+		<div class="xl:w-[1280px] xl:px-[70px] lg:px-[30px] w-full">
 			<RefreshButton />
 			<BackToTopButton />
 			<Header />
 			<Promo />
 			<Navbar :sections="Object.keys(content)" />
-			<div class="flex flex-row justify-between">
-				<div class="max-w-[817px]">
+			<div class="flex px-1">
+				<div class="flex-grow">
 					<Section
 						v-for="(value, key) in content"
 						:key="key"

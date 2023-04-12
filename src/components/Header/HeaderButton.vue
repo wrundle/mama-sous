@@ -1,15 +1,24 @@
 <script setup>
 defineProps({
-	message: String
+	text: String,
+	label: String
 });
 </script>
 
 
 <template>
 	<span class="
-		mr-[30px] text-[17px] whitespace-nowrap transition-all cursor-pointer text-[#0085FF]
+		lg:my-[5px] relative text-[17px] text-[#0085FF] leading-[20px] whitespace-nowrap transition-all cursor-pointer
 		underline underline-offset-2 decoration-blue-200 hover:decoration-blue-500 sf-pro-display-light
-	">{{ message }}</span>
+	">
+		<span
+			v-if="label"
+			class="absolute -top-5 text-[13px] text-neutral-400"
+		>
+			{{ label }}
+		</span>
+		{{ text }}
+	</span>
 </template>
 
 
